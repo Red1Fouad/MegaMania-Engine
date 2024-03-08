@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"drawSelf3Colors",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"drawSelf3Colors",
+  "parent":{
+    "name":"Drawing",
+    "path":"folders/Scripts/Drawing.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

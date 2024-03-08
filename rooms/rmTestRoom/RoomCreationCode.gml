@@ -1,0 +1,1 @@
+playMusicVolumeLoopPoint(bgmCut, 0.6, 1345030/7527168, 6405124/7527168);

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"checkGround",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"checkGround",
+  "parent":{
+    "name":"Collision_Gravity",
+    "path":"folders/Scripts/Collision_Gravity.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

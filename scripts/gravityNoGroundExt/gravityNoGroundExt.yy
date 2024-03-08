@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"gravityNoGroundExt",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"gravityNoGroundExt",
+  "parent":{
+    "name":"Collision_Gravity",
+    "path":"folders/Scripts/Collision_Gravity.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
