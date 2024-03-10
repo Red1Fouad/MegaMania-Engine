@@ -4,6 +4,10 @@ if instance_number(objMegaman) == 2
 	for (var m = 0; m < instance_number(objMegaman); m++) {
 		var megaman = instance_find(objMegaman, m);
 		if (megaman.playerID == playerID) {
+			character = megaman.character;
+			primary_color = megaman.primary_color;
+			secondary_color = megaman.primary_color;
+			outline_color = megaman.primary_color;
 			with objMegaman visible = false;
 		    sprite_index = megaman.sprite_index;
 		    image_index = megaman.image_index;
@@ -156,7 +160,7 @@ if instance_number(objMegaman) == 2
         
         
 			        //Climbing animation
-			        if sprite_index == sprMegamanClimb
+			        if sprite_index == asset_get_index("spr"+character+"Climb")
 			        {
 			            climbTimer += 1;
 			            if climbTimer >= 8
@@ -175,6 +179,10 @@ if instance_number(objMegaman) == 2
 }
 else
 {
+	character = objMegaman.character;
+	primary_color = objMegaman.primary_color;
+	secondary_color = objMegaman.primary_color;
+	outline_color = objMegaman.primary_color;
 	with objMegaman visible = false;
 	sprite_index = objMegaman.sprite_index;
 	image_index = objMegaman.image_index;

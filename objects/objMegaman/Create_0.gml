@@ -1,8 +1,7 @@
 //Colors
-primary_color = make_color_rgb(0,112,236);
-secondary_color = make_color_rgb(0,232,216);
-outline_color = make_color_rgb(0,0,0);
+character = "Megaman";
 
+playerSetColors();
 //Player ID
 playerID = 1;
 ladderXScale = 1;
@@ -114,9 +113,18 @@ spriteClimb = sprMegamanClimb;
 spriteGetup = sprMegamanClimbGetup; //Can also be sprMegamanClimbShoot, thus it's variable
 
 //Static sprites
-spriteSlide = sprMegamanSlide;
-spriteHit = sprMegamanHit;
-spriteTeleport = sprMegamanTeleport;
+if character == "Megaman"
+{
+	spriteSlide = sprMegamanSlide;
+	spriteHit = sprMegamanHit;
+	spriteTeleport = sprMegamanTeleport;
+}
+else if character == "Protoman"
+{
+	spriteSlide = sprProtomanSlide;
+	spriteHit = sprProtomanHit;
+	spriteTeleport = sprProtomanTeleport;
+}
 
 //Set the correct whitemask colors
 event_user(0);

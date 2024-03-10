@@ -10,6 +10,7 @@ function playerPause() {
 		pause.primary_color = primary_color;
 		pause.secondary_color = secondary_color;
 		pause.outline_color = outline_color;
+		pause.character = character;
 	    playSFX(sfxPause);
 	}
 

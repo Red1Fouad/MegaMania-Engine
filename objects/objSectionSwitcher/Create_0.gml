@@ -3,6 +3,11 @@ playerID = 1;
 global.frozen = true;
 global.switchingSections = true;
 
+character = 0;
+primary_color = 0;
+secondary_color = 0;
+outline_color = 0;
+
 with prtEnemy beenOutsideView = true;
 with prtPlayerProjectile instance_destroy();
 

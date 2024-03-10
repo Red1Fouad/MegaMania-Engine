@@ -3,6 +3,7 @@ blackAlphaIncrease = 0.2;
 blackAlphaTimer = 0;
 blackAlphaTimerMax = 2;
 playerID = 1;
+character = 0;
 phase = 0;  //0: increasing the black rectangle's alpha
 option = global.currentWeapon[global.playerID];
 oldWeapon = global.weapon[playerID];

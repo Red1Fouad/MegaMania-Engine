@@ -8,16 +8,30 @@ function playerShoot() {
 	else
 	    box = bbox_left-6;
     
-	switch sprite_index
+	if character == "Megaman"
 	{
-	    case spriteStand: yy = y+4; break;
-	    case spriteStep: yy = y+4; break;
-	    case spriteWalk: yy = y+4; break;
-	    case spriteJump: yy = y+3; break;
-	    case spriteClimb: yy = y+4; break;
-	    default: yy = y+4; break;
+		switch sprite_index
+		{
+		    case spriteStand: yy = y+4; break;
+		    case spriteStep: yy = y+4; break;
+		    case spriteWalk: yy = y+4; break;
+		    case spriteJump: yy = y+3; break;
+		    case spriteClimb: yy = y+4; break;
+		    default: yy = y+4; break;
+		}
 	}
-
+	else if character == "Protoman"
+	{
+		switch sprite_index
+		{
+		    case spriteStand: yy = y+7; break;
+		    case spriteStep: yy = y+7; break;
+		    case spriteWalk: yy = y+7; break;
+		    case spriteJump: yy = y+6; break;
+		    case spriteClimb: yy = y+6; break;
+		    default: yy = y+7; break;
+		}
+	}
 
 	//Shooting
 	if keyShootPressed && canShoot == true && (canMove == true || climbing == true || isThrow == true || onRushJet == true)

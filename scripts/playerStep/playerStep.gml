@@ -2,6 +2,7 @@
 /// @description Handles general step event code for the player
 function playerStep() {
 
+var scarfSpeed = 0.15;
 	//Check for ground
 	if place_meeting(x, y+global.yspeed[playerID]+1, objSolid) || (place_meeting(x, y+global.yspeed[playerID]+1, objTopSolid)  && global.yspeed[playerID] >= 0)
 	|| (place_meeting(x, y+global.yspeed[playerID]+1, prtMovingPlatformJumpthrough) && global.yspeed[playerID] >= 0)
@@ -233,8 +234,16 @@ function playerStep() {
 	            if canSpriteChange == true
 	            {
 	                sprite_index = spriteStand;
-	                image_speed = 0;
-	                image_index = blinkImage;
+	                if character == "Megaman" 
+					{
+						image_speed = 0;
+		                image_index = blinkImage;
+					}
+					else if character == "Protoman"
+					{
+						image_speed = scarfSpeed;
+					}
+					
 	            }
 	        }
 	    }
@@ -297,8 +306,15 @@ function playerStep() {
 	        if global.xspeed[playerID] == 0
 	        {
 	            sprite_index = spriteStand;
-	            image_index = blinkImage;
-	            image_speed = 0;
+	            if character == "Megaman" 
+				{
+					image_index = blinkImage;
+		            image_speed = 0;
+				}
+				else if character == "Protoman"
+				{
+					image_speed = scarfSpeed;
+				}
 	        }
 	        else
 	        {
@@ -314,33 +330,42 @@ function playerStep() {
 
 
 	//Blinking animation
-	if sprite_index == sprMegamanStand //Don't use spriteStand as this could also be sprMegamanStandShoot!
+	if character == "Megaman"
 	{
-	    if blinkImage == 0
-	    {
-	        blinkTimer += 1;
-	        if blinkTimer >= blinkTimerMax
-	        {
-	            blinkImage = 1;
-	            blinkTimer = 0;
-	        }
-	    }
-	    else
-	    {
-	        blinkTimer += 1;
-	        if blinkTimer >= blinkDuration
-	        {
-	            blinkImage = 0;
-	            blinkTimer = 0;
-	        }
-	    }
+		if sprite_index == sprMegamanStand //Don't use spriteStand as this could also be sprMegamanStandShoot!
+		{
+		    if blinkImage == 0
+		    {
+		        blinkTimer += 1;
+		        if blinkTimer >= blinkTimerMax
+		        {
+		            blinkImage = 1;
+		            blinkTimer = 0;
+		        }
+		    }
+		    else
+		    {
+		        blinkTimer += 1;
+		        if blinkTimer >= blinkDuration
+		        {
+		            blinkImage = 0;
+		            blinkTimer = 0;
+		        }
+		    }
+		}
+		else
+		{
+		    blinkTimer = 0;
+		    blinkImage = 0;
+		}
 	}
-	else
+	else if character == "Protoman"
 	{
-	    blinkTimer = 0;
-	    blinkImage = 0;
+		if sprite_index == sprProtomanStand //Don't use spriteStand as this could also be sprMegamanStandShoot!
+			{
+				image_speed = scarfSpeed;
+			}
 	}
-
 
 	//Sidestepping
 	if isStep == true

@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"Normal",
-    "path":"folders/Sprites/Player/Normal.yy",
+    "name":"Megaman",
+    "path":"folders/Sprites/Player/Megaman.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

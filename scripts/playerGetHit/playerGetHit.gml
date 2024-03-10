@@ -7,7 +7,12 @@ function playerGetHit(argument0) {
 
 	if canHit == true
 	{
-	    global._health[playerID] -= argument0;
+		var damageMult
+		if character == "Protoman" 
+			damageMult = 1.5
+		else 
+			damageMult = 1;
+	    global._health[playerID] -= argument0*damageMult;
     
 	    canHit = false;
 	    isHit = true;

@@ -1,19 +1,19 @@
 //Change colors depending on the special weapon
 //Primary is the helmet color (dark blue), secondary is the shirt color (cyan)
-
+playerSetColors();
 switch global.weapon[playerID]
 {
     case megabuster:
-	if playerID == 1
-	{
-        global.primaryCol[playerID] = make_color_rgb(0, 120, 248);
-        global.secondaryCol[playerID] = make_color_rgb(0, 232, 216);
-	}
-	else
-	{
-        global.primaryCol[playerID] = make_color_rgb(222, 41, 0);
-        global.secondaryCol[playerID] = make_color_rgb(189, 189, 189);	
-	}
+		if character == "Megaman"
+		{
+	        global.primaryCol[playerID] = make_color_rgb(0, 120, 248);
+	        global.secondaryCol[playerID] = make_color_rgb(0, 232, 216);
+		}
+		else if character == "Protoman"
+		{
+	        global.primaryCol[playerID] = make_color_rgb(222, 41, 0);
+	        global.secondaryCol[playerID] = make_color_rgb(189, 189, 189);	
+		}
     break;
     
     case rushcoil:
@@ -60,14 +60,8 @@ switch global.weapon[playerID]
     break;
     
 }
-if playerID == 1
-{
-	global.outlineCol[playerID] = c_black;
-}
-else
-{
-	global.outlineCol[playerID] = c_black;
-}
+
+global.outlineCol[playerID] = c_black;
 
 if canStep == true  //global.keyPausePressed was unknown at the first frame because of event order
 {

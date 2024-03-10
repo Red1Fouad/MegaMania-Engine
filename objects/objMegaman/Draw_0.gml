@@ -61,8 +61,8 @@ else if teleporting == true
         /*draw_sprite_ext(spriteTeleport, image_index, round(x), round(global.viewY-32+teleportY), image_xscale, image_yscale, image_angle, c_white, 1);
         draw_sprite_ext(sprMegamanTeleportPrimary, image_index, round(x), round(global.viewY-32+teleportY), image_xscale, image_yscale, image_angle, global.primaryCol[playerID], 1);
         draw_sprite_ext(sprMegamanTeleportSecondary, image_index, round(x), round(global.viewY-32+teleportY), image_xscale, image_yscale, image_angle, global.secondaryCol[playerID], 1);*/
-        drawSpriteColorSwap(spriteTeleport, image_index, round(x), round(global.viewY-32+teleportY), primary_color, secondary_color, outline_color,global.primaryCol[playerID],global.secondaryCol[playerID], global.outlineCol[playerID]);
-		
+		drawSpriteColorSwap(spriteTeleport, image_index, round(x), round(global.viewY-32+teleportY), primary_color, secondary_color, outline_color,global.primaryCol[playerID],global.secondaryCol[playerID], global.outlineCol[playerID]);
+		event_user(0);
         teleportY += 7;
     }
 }
@@ -97,6 +97,7 @@ else
         teleporting = true;
         teleportY = 0;
         teleportTimer = 0;
+		event_user(0);
         sprite_index = spriteTeleport;
 }
 

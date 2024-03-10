@@ -76,6 +76,7 @@ if !instance_exists(objSectionSwitcher) && !climbing && !isSlide && !global.froz
 	{
 		if global._health[2] <= 0 {global._health[1] = global._health[1]/2; global._health[2] = 28;}
 		var p2 = instance_create(x + 10, y, objMegaman)
+		p2.character = "Protoman";
 		p2.playerID = 2;
 	}
 
@@ -125,4 +126,18 @@ if !instance_exists(objSectionSwitcher) && !climbing && !isSlide && !global.froz
 	}
 }
 
+
+//STATIC SPRITES HOTFIX
+if character == "Megaman"
+{
+	spriteSlide = sprMegamanSlide;
+	spriteHit = sprMegamanHit;
+	spriteTeleport = sprMegamanTeleport;
+}
+else if character == "Protoman"
+{
+	spriteSlide = sprProtomanSlide;
+	spriteHit = sprProtomanHit;
+	spriteTeleport = sprProtomanTeleport;
+}
 

@@ -11,11 +11,11 @@ if (phase >= 1 && phase <= 3) || phase == 5 || phase == 6
     //BG
     draw_set_color(c_white);
     draw_set_alpha(1);
-	if playerID == 1
+	if character == "Megaman"
 	{
 		draw_sprite(sprPauseMenuBG, 0, global.viewX, global.viewY);
 	}
-	else
+	else if character == "Protoman"
 	{
 		draw_sprite(sprPauseMenuBGP2, 0, global.viewX, global.viewY);
 	}
@@ -34,12 +34,12 @@ if (phase >= 1 && phase <= 3) || phase == 5 || phase == 6
     //Megaman
     xx = global.viewX+155;
     yy = global.viewY+192;
-    //draw_sprite_ext(sprMegamanStand, 0, xx, yy, 1, 1, 0, c_white, 1);
-	drawSpriteColorSwap(sprMegamanStand, 0, xx, yy, primary_color, secondary_color, outline_color,global.primaryCol[playerID],global.secondaryCol[playerID], global.outlineCol[playerID]);
+   //draw_sprite_ext(asset_get_index("spr"+character+"Stand, 0, xx, yy, 1, 1, 0, c_white, 1);
+	drawSpriteColorSwap(asset_get_index("spr"+character+"Stand"), 0, xx, yy, primary_color, secondary_color, outline_color,global.primaryCol[playerID],global.secondaryCol[playerID], global.outlineCol[playerID]);
 	/*
-    draw_sprite_ext(sprMegamanStandPrimary, 0, xx, yy, 1, 1, 0, global.primaryCol[playerID], 1);
-    draw_sprite_ext(sprMegamanStandSecondary, 0, xx, yy, 1, 1, 0, global.secondaryCol[playerID], 1);
-    draw_sprite_ext(sprMegamanStandOutline, 0, xx, yy, 1, 1, 0, bgCol, 1);*/
+    draw_sprite_ext(asset_get_index("spr"+character+"StandPrimary, 0, xx, yy, 1, 1, 0, global.primaryCol[playerID], 1);
+    draw_sprite_ext(asset_get_index("spr"+character+"StandSecondary, 0, xx, yy, 1, 1, 0, global.secondaryCol[playerID], 1);
+    draw_sprite_ext(asset_get_index("spr"+character+"StandOutline, 0, xx, yy, 1, 1, 0, bgCol, 1);*/
     
     //Icons, ammo bars and names
     var maxI;
