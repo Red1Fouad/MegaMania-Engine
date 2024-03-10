@@ -112,7 +112,7 @@ if selected == false
                     ID.type = "room";
                     
                 if global.bossDefeated[option] == false
-                    ID.myRoom = rmTestRoom;
+                    ID.myRoom = rmTestStage;
                 else
                     ID.myRoom = global.destinationLevel;
             break;

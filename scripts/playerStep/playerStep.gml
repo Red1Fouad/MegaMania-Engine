@@ -135,7 +135,7 @@ var scarfSpeed = 0.15;
 	                if !(place_meeting(x, y+1, objIce) && global.xspeed[playerID] > 0)
 	                {
 	                    //Normal physics
-	                    if !place_meeting(x-1, y, objSolid) && !place_meeting(x-1, y, prtMovingPlatformSolid)
+	                    if (!place_meeting(x-1, y, objSolid) xor place_meeting(x-1,y,prtSlope)) && !place_meeting(x-1, y, prtMovingPlatformSolid)
 	                        global.xspeed[playerID] = -walkSpeed;
 	                    else if place_meeting(x-1, y, prtMovingPlatformSolid) //Still walk when the moving platform is despawned
 	                    {
@@ -146,7 +146,7 @@ var scarfSpeed = 0.15;
 	                else
 	                {
 	                    //Ice physics
-	                    if !place_meeting(x-1, y, objSolid) && !place_meeting(x-1, y, prtMovingPlatformSolid)
+	                    if (!place_meeting(x-1, y, objSolid) xor place_meeting(x-1,y,prtSlope)) && !place_meeting(x-1, y, prtMovingPlatformSolid)
 	                        global.xspeed[playerID] -= iceDecWalk;
 	                    else if place_meeting(x-1, y, prtMovingPlatformSolid) //Still walk when the moving platform is despawned
 	                    {
@@ -177,7 +177,7 @@ var scarfSpeed = 0.15;
 	                if !(place_meeting(x, y+1, objIce) && global.xspeed[playerID] < 0)
 	                {
 	                    //Normal physics
-	                    if !place_meeting(x+1, y, objSolid) && !place_meeting(x+1, y, prtMovingPlatformSolid)
+	                    if (!place_meeting(x+1, y, objSolid) xor place_meeting(x+1,y,prtSlope)) && !place_meeting(x+1, y, prtMovingPlatformSolid)
 	                        global.xspeed[playerID] = walkSpeed;
 	                    else if place_meeting(x+1, y, prtMovingPlatformSolid) //Still walk when the moving platform is despawned
 	                    {
@@ -188,7 +188,7 @@ var scarfSpeed = 0.15;
 	                else
 	                {
 	                    //Ice physics
-	                    if !place_meeting(x+1, y, objSolid) && !place_meeting(x+1, y, prtMovingPlatformSolid)
+	                    if (!place_meeting(x-1, y, objSolid) xor place_meeting(x-1,y,prtSlope)) && !place_meeting(x-1, y, prtMovingPlatformSolid)
 	                        global.xspeed[playerID] += iceDecWalk;
 	                    else if place_meeting(x+1, y, prtMovingPlatformSolid) //Still walk when the moving platform is despawned
 	                    {
@@ -370,7 +370,7 @@ var scarfSpeed = 0.15;
 	//Sidestepping
 	if isStep == true
 	{
-	    if !place_meeting(x+image_xscale, y, objSolid) && !place_meeting(x+image_xscale, y, prtMovingPlatformSolid)
+	    if (!place_meeting(x+image_xscale, y, objSolid) xor place_meeting(x+image_xscale,y,prtSlope)) && !place_meeting(x+image_xscale, y, prtMovingPlatformSolid)
 	        global.xspeed[playerID] = stepSpeed * image_xscale;
 	    else if place_meeting(x+image_xscale, y, prtMovingPlatformSolid)
 	    {
@@ -391,8 +391,7 @@ var scarfSpeed = 0.15;
 
 
 	//Allow movement
-	x += global.xspeed[playerID];
-	y += global.yspeed[playerID];
+	move(global.xspeed[playerID], global.yspeed[playerID]);
 
 
 	//Stop movement at section borders
@@ -498,6 +497,10 @@ var scarfSpeed = 0.15;
 	            sprite_index = spriteSlide;
 	            mask_index = mskMegamanSlide;
             
+				if (place_meeting(x,y,prtSlope)) {
+					while (place_meeting(x,y,prtSlope)) {y--;}
+				}
+			
 	            if image_xscale == -1
 	                with instance_create(bbox_right-2, bbox_bottom-2, objSlideDust) image_xscale = -1;
 	            else
@@ -532,7 +535,7 @@ var scarfSpeed = 0.15;
 	        canProceed = true;
         
 	        if (place_meeting(x, y-3, objSolid) || place_meeting(x, y-3, prtMovingPlatformSolid)) && (ground == true || place_meeting(x-(slideSpeed-1), y+1, objSolid) || place_meeting(x-(slideSpeed-1), y+1, objTopSolid) || place_meeting(x-(slideSpeed-1), y+1, prtMovingPlatformJumpthrough) || place_meeting(x-(slideSpeed-1), y+1, prtMovingPlatformSolid)
-	        || place_meeting(x+(slideSpeed-1), y, objSolid) || place_meeting(x+(slideSpeed-1), y, prtMovingPlatformSolid)) //Extra check because if Mega Man falls down while sliding and a wall is on the other side of him and a ceiling is on top of him, when turning around on the right frame he would zip through the solids
+	        || (place_meeting(x+(slideSpeed-1), y, objSolid) xor place_meeting(x+(slideSpeed-1), y, prtSlope)) || place_meeting(x+(slideSpeed-1), y, prtMovingPlatformSolid)) //Extra check because if Mega Man falls down while sliding and a wall is on the other side of him and a ceiling is on top of him, when turning around on the right frame he would zip through the solids
 	        {            
 	            if place_meeting(x, y-3, prtMovingPlatformSolid)
 	            {
@@ -582,7 +585,7 @@ var scarfSpeed = 0.15;
 	            if ground == false || (keyLeft && !keyRight && image_xscale == 1)
 	            || (keyRight && !keyLeft && image_xscale == -1)
 	            || slideTimer >= slideFrames || (keyJumpPressed && !keyDown)
-	            || place_meeting(x+image_xscale*3, y, objSolid) || place_meeting(x+image_xscale*3, y, prtMovingPlatformSolid)
+	            || (place_meeting(x+image_xscale*3, y, objSolid) xor place_meeting(x+image_xscale*3, y, prtSlope)) || place_meeting(x+image_xscale*3, y, prtMovingPlatformSolid)
 	            {
 	                var stopSld;
 	                stopSld = true;
@@ -590,7 +593,7 @@ var scarfSpeed = 0.15;
 	                if ground == false || (keyLeft && !keyRight && image_xscale == 1)
 	                || (keyRight && !keyLeft && image_xscale == -1)
 	                || slideTimer >= slideFrames || (keyJumpPressed && !keyDown)
-	                || place_meeting(x+image_xscale*3, y, objSolid)
+	                || (place_meeting(x+image_xscale*3, y, objSolid) xor place_meeting(x+image_xscale*3, y, prtSlope))
 	                {
 	                    stopSld = true;
 	                }
@@ -611,6 +614,13 @@ var scarfSpeed = 0.15;
 	                    var endLoop;
 	                    endLoop = false;
                     
+						//go down if on slope
+					    if (place_meeting(x,y+cfgMaxStep+1,prtSlope) or place_meeting(x-global.xspeed[playerID],y+cfgMaxStep+1,prtSlope)) {
+                        while (!place_meeting(x,y+1,objSolid)) {
+                            y++;
+                        }
+                    }
+					
 	                    //Pushing down until not inside a ceiling anymore
 	                    while (place_meeting(x, y, objSolid) || place_meeting(x, y, prtMovingPlatformSolid)) && endLoop == false      //If your slide cancels right under a ceiling, move MM down
 	                    {

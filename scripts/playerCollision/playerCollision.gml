@@ -7,7 +7,16 @@ function playerCollision() {
 	var mySolid = instance_place(x, y+global.yspeed[playerID], objSolid);
 	if mySolid >= 0 && global.yspeed[playerID] > 0
 	{
-	    y = mySolid.y - (sprite_get_height(mask_index) - sprite_get_yoffset(mask_index));
+		var ind = object_get_parent(mySolid.object_index);
+	    if ind == prtSlope {
+	        y = mySolid.bbox_bottom;
+	        while place_meeting(x, y, mySolid) {
+	            y--;
+	        }
+	    }
+    else {
+        y = mySolid.y - (sprite_get_height(mask_index) - sprite_get_yoffset(mask_index));
+    }
 	    ground = true;
 	    global.yspeed[playerID] = 0;
     
@@ -22,21 +31,21 @@ function playerCollision() {
 
 	//Wall
 	mySolid = instance_place(x+global.xspeed[playerID], y, objSolid);
-	if mySolid >= 0 && global.xspeed[playerID] != 0
-	{
-	    if global.xspeed[playerID] < 0
-	    {
-	        x = mySolid.bbox_right + sprite_get_xoffset(mask_index) - sprite_get_bbox_left(mask_index);
-        
-	        //For some reason, the code above would work correctly half the time, but clip MM inside the wall the other half
-	        //This while-loop fixes the issue by forcing MM out of the wall
-	        while place_meeting(x, y, mySolid)
-	            x += 1;
+	if mySolid >= 0 && global.xspeed[playerID] != 0 {
+	    var ind = object_get_parent(mySolid.object_index);
+	    var ignore = ind == prtSlope;
+	    if (!ignore) {
+	        if (place_meeting(x+global.xspeed[playerID],y,prtSlope)) {ignore = true;}
 	    }
-	    else
-	        x = mySolid.x - (sprite_get_width(mask_index) - sprite_get_xoffset(mask_index)) + (sprite_get_width(mask_index) - sprite_get_bbox_right(mask_index)) - 1;
-        
-	    global.xspeed[playerID] = 0;
+    
+	    if (!ignore) {
+	        if global.xspeed[playerID] < 0
+	            x = mySolid.x + mySolid.sprite_width + sprite_get_xoffset(mask_index) - sprite_get_bbox_left(mask_index) + 1;
+	        else
+	            x = mySolid.x - (sprite_get_width(mask_index) - sprite_get_xoffset(mask_index)) + (sprite_get_width(mask_index) - sprite_get_bbox_right(mask_index)) - 1;
+            
+	        global.xspeed[playerID] = 0;
+	    }
 	}
 
 

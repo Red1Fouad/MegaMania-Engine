@@ -1,4 +1,4 @@
-if room == rmTestRoom && !instance_exists(objPauseMenu)
+if room == rmTestStage && !instance_exists(objPauseMenu)
 {
 	draw_set_halign(fa_right);
 	draw_set_color(c_white);
