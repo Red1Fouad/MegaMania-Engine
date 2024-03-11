@@ -221,6 +221,7 @@
     {"name":"playMusicNoLoopVolume","order":6,"path":"scripts/playMusicNoLoopVolume/playMusicNoLoopVolume.yy",},
     {"name":"playMusicVolume","order":2,"path":"scripts/playMusicVolume/playMusicVolume.yy",},
     {"name":"playMusicVolumeLoopPoint","order":4,"path":"scripts/playMusicVolumeLoopPoint/playMusicVolumeLoopPoint.yy",},
+    {"name":"instance_multiplayer_check","order":17,"path":"scripts/instance_multiplayer_check/instance_multiplayer_check.yy",},
     {"name":"sound_play","order":1,"path":"scripts/sound_play/sound_play.yy",},
     {"name":"sound_stop_all","order":3,"path":"scripts/sound_stop_all/sound_stop_all.yy",},
     {"name":"sound_stop","order":2,"path":"scripts/sound_stop/sound_stop.yy",},

@@ -58,12 +58,14 @@ function playerShoot() {
 	            canSpriteChange = true;
 	        }
 	    }
-            
-    
+
+		
 	    switch global.weapon[playerID]
 	    {
 	        case megabuster:
-	            if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) < 3 * (global.isMultiplayer*2)
+				var busterNum = 3
+				if character == "Protoman" {busterNum = 2}
+	            if instance_multiplayer_check(objBusterShot, busterNum)
 	            {
 	                attackID = instance_create(box+image_xscale*4, yy, objBusterShot);
 	                    attackID.xspeed = image_xscale * 5;
@@ -75,7 +77,7 @@ function playerShoot() {
 	        break;
         
 	        case silvertomahawk:
-	            if instance_number(objSilverTomahawk) < 2 * (global.isMultiplayer*2)
+	            if instance_multiplayer_check(objSilverTomahawk,2)
 	            {
 	                attackID = instance_create(box+image_xscale*12, yy, objSilverTomahawk);
 	                    attackID.xspeed = image_xscale * 3.5;
@@ -91,7 +93,7 @@ function playerShoot() {
 	        break;
         
 	        case windstorm:
-	            if instance_number(objWindStorm) < 3 * (global.isMultiplayer*2)
+	            if instance_multiplayer_check(objWindStorm, 3)
 	            {
 	                attackID = instance_create(box+image_xscale*9, yy, objWindStorm);
 	                    attackID.xspeed = image_xscale * 3;
@@ -108,7 +110,7 @@ function playerShoot() {
 	        break;
         
 	        case pharaohshot:
-	            if instance_number(objPharaohShot) < 3 * (global.isMultiplayer*2)
+	            if instance_multiplayer_check(objPharaohShot, 3)
 	            {
 	                attackID = instance_create(box+image_xscale*4, yy, objPharaohShot);
 	                    attackID.xspeed = image_xscale * 4.5;
@@ -132,7 +134,7 @@ function playerShoot() {
 	        break;
         
 	        case metalblade:
-	            if instance_number(objMetalBlade) < 3 * (global.isMultiplayer*2)
+	            if instance_multiplayer_check(objMetalBlade, 3)
 	            {
 	                attackID = instance_create(x+image_xscale*3, yy, objMetalBlade);
 					attackID.playerID = playerID;
@@ -168,7 +170,7 @@ function playerShoot() {
 	        break;
         
 	        case starcrash:
-	            if instance_number(objStarCrash) < 1 * (global.isMultiplayer*2)
+	            if instance_multiplayer_check(objStarCrash, 1)
 	            {
 	                attackID = instance_create(x, sprite_get_ycenter(), objStarCrash);
 					attackID.playerID = playerID;
@@ -176,7 +178,7 @@ function playerShoot() {
 	        break;
         
 	        case rushcoil:
-	            if instance_number(objRushCoil) < 1
+	            if instance_multiplayer_check(objRushCoil, 1)
 	            {
 	                var tpY, airIncrease;
 	                tpY = 0;
@@ -297,7 +299,7 @@ function playerShoot() {
 	            }
 	            else
 	            {
-	                if instance_number(objBusterShot) + instance_number(objBusterShotHalfCharged) < 3
+	                if instance_multiplayer_check(objBusterShot, 3)
 	                {
 	                    attackID = instance_create(box+image_xscale*4, yy, objBusterShot);
 	                        attackID.xspeed = image_xscale * 5;
@@ -425,7 +427,7 @@ function playerShoot() {
 	                        sound_stop(sfxCharging);
 	                        playSFX(sfxCharged);
 	                    }
-						if playerID == 1
+						if character == "Megaman"
 						{
 		                    switch (chargeTimer/2 mod 3)
 		                    {
@@ -448,28 +450,28 @@ function playerShoot() {
 		                        break;
 		                    }
 						}
-						else
+						else if character == "Protoman"
 						{
-							switch (chargeTimer/2 mod 3)
-		                    {
-		                        case 0: //Light blue helmet, black shirt, blue outline
-		                            global.primaryCol[playerID] = c_red;
-		                            global.secondaryCol[playerID] = c_black;
-		                            global.outlineCol[playerID] = c_maroon;
-		                        break;
-                        
-		                        case 1: //Black helmet, blue shirt, light blue outline
-		                            global.primaryCol[playerID] = c_black;
-		                            global.secondaryCol[playerID] = c_maroon;
-		                            global.outlineCol[playerID] = c_red;
-		                        break;
-                        
-		                        case 2: //Blue helmet, light blue shirt, blue outline
-		                            global.primaryCol[playerID] = c_maroon;
-		                            global.secondaryCol[playerID] = c_red;
-		                            global.outlineCol[playerID] = c_black;
-		                        break;
-		                    }
+							switch (chargeTimer/2 mod 3) 
+							{
+				                case 0:
+				                    global.primaryCol[playerID] = make_color_rgb(247, 189, 57);
+				                    global.secondaryCol[playerID] = make_color_rgb(255, 231, 165);
+				                    global.outlineCol[playerID] = make_color_rgb(255, 115, 19);
+				                break;
+                
+				                case 1:
+				                    global.primaryCol[playerID] = make_colour_rgb(222, 41, 0);
+				                    global.secondaryCol[playerID] = make_colour_rgb(189, 189, 189);
+				                    global.outlineCol[playerID] = make_color_rgb(189, 0, 189);
+				                break;
+
+				                case 2:
+				                    global.primaryCol[playerID] = make_colour_rgb(222, 41, 0);
+				                    global.secondaryCol[playerID] = make_colour_rgb(189, 189, 189);
+				                    global.outlineCol[playerID] = c_black;
+				                break;
+				            }
 						}
 	                }
 	            }

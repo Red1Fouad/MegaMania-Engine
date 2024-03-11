@@ -101,3 +101,8 @@ else
         sprite_index = spriteTeleport;
 }
 
+draw_set_color(c_white);
+draw_set_halign(fa_center);
+draw_set_font(global.MM3font);
+
+draw_text(round(x), round(y) - 20, "P"+string(playerID));

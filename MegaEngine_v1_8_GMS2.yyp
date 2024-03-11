@@ -300,6 +300,7 @@
     {"id":{"name":"playMusicVolume","path":"scripts/playMusicVolume/playMusicVolume.yy",},},
     {"id":{"name":"playMusicVolumeLoopPoint","path":"scripts/playMusicVolumeLoopPoint/playMusicVolumeLoopPoint.yy",},},
     {"id":{"name":"playSFX","path":"scripts/playSFX/playSFX.yy",},},
+    {"id":{"name":"instance_multiplayer_check","path":"scripts/instance_multiplayer_check/instance_multiplayer_check.yy",},},
     {"id":{"name":"sound_loop","path":"scripts/sound_loop/sound_loop.yy",},},
     {"id":{"name":"sound_play","path":"scripts/sound_play/sound_play.yy",},},
     {"id":{"name":"sound_stop_all","path":"scripts/sound_stop_all/sound_stop_all.yy",},},
