@@ -1,7 +1,12 @@
 {
   "$GMTileSet":"",
   "%Name":"tstTest_tileset",
-  "autoTileSets":[],
+  "autoTileSets":[
+    {"$GMAutoTileSet":"","%Name":"Ground","closed_edge":false,"name":"Ground","resourceType":"GMAutoTileSet","resourceVersion":"2.0","tiles":[
+        20,5,6,7,24,46,42,63,23,41,47,62,25,80,81,43,19,8,26,44,2,60,59,61,21,27,9,45,38,77,78,79,22,56,1,10,
+        3,11,39,29,37,28,4,55,40,57,58,
+      ],},
+  ],
   "macroPageTiles":{
     "SerialiseHeight":0,
     "SerialiseWidth":0,
@@ -13,7 +18,7 @@
   "out_tilevborder":2,
   "parent":{
     "name":"Tilesets",
-    "path":"folders/Sprites/tilesets/Tilesets.yy",
+    "path":"folders/Tile Sets/Tilesets.yy",
   },
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",

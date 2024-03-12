@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"sfxEnemyShoot",
+  "%Name":"sfxSydeckaThrow",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,17 +9,17 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.168345,
-  "name":"sfxEnemyShoot",
+  "duration":0.468277,
+  "name":"sfxSydeckaThrow",
   "parent":{
     "name":"Enemy",
     "path":"folders/Sounds/Enemy.yy",
   },
-  "preload":true,
+  "preload":false,
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sfxEnemyShoot",
+  "soundFile":"sfxSydeckaThrow.wav",
   "type":1,
   "volume":1.0,
 }
