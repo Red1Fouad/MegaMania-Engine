@@ -19,7 +19,14 @@ if (phase >= 1 && phase <= 3) || phase == 5 || phase == 6
 	{
 		draw_sprite(sprPauseMenuBGP2, 0, global.viewX, global.viewY);
 	}
-    
+    else if character == "Bass"
+	{
+		draw_sprite(sprPauseMenuBG, 0, global.viewX, global.viewY);
+	}
+	else if character == "Roll"
+	{
+		draw_sprite(sprPauseMenuBG, 0, global.viewX, global.viewY);
+	}
     //Life
     var xx, yy, bgCol, i;
     xx = global.viewX+208;

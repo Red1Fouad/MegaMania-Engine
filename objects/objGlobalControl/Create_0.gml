@@ -11,7 +11,7 @@ global.viewX = 0;
 global.viewY = 0;
 global.viewWidth = camera_get_view_width(global.view);
 global.viewHeight = camera_get_view_height(global.view);
-
+global.enableDoubleJump = 1;
 //Player ID
 global.playerID = array_create(global.playersMax + 1, 1);
 

@@ -1,3 +1,4 @@
+event_inherited();
 contactDamage = 6;
 
 canStep = false;

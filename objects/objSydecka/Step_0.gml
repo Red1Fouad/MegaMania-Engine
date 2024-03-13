@@ -9,9 +9,9 @@ if (!global.frozen && !dead) {
         facePlayer();
     }
     
-    animationFramesLegs += 0.1;
-    if (animationFramesLegs >= 4) {
-        animationFramesLegs -= 4;
+    idleAnim += 0.1;
+    if (idleAnim >= 4) {
+        idleAnim -= 4;
     }
 
     switch (phase) {
@@ -46,7 +46,7 @@ if (!global.frozen && !dead) {
                 image_index = 0;
                 sprite_index = sprSydeckaIdle;
                 phase = 0;
-                animationFramesLegs = 1;
+                idleAnim = 1;
                 phaseFrames = 0;
             } else {
                 phaseFrames += 1;

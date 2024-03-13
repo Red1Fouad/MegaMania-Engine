@@ -335,7 +335,7 @@ else
         
         
 			//Climbing animation
-			if sprite_index == sprMegamanClimb
+			if sprite_index == asset_get_index("spr"+character+"Climb")
 			{
 				climbTimer += 1;
 				if climbTimer >= 8

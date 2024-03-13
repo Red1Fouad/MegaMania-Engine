@@ -15,12 +15,24 @@ function playerHandleSprites() {
 	
 	else if isThrow == true
 	{
-	    spriteStand = asset_get_index("spr"+character+"StandThrow");
-	    spriteStep = asset_get_index("spr"+character+"StandThrow");
-	    spriteJump = asset_get_index("spr"+character+"JumpThrow");
-	    spriteWalk = asset_get_index("spr"+character+"WalkThrow");
-	    spriteClimb = asset_get_index("spr"+character+"ClimbThrow");
-	    spriteGetup = asset_get_index("spr"+character+"ClimbThrow");
+		if global.weapon[playerID] == 0 && character == "Bass"
+		{
+		    spriteStand = sprBassStandShoot;
+		    spriteStep = sprBassStandShoot;
+		    spriteJump = sprBassJumpShoot;
+		    spriteWalk = sprBassWalkShoot;
+		    spriteClimb = sprBassClimbShoot;
+		    spriteGetup = sprBassClimbShoot;	
+		}
+		else
+		{
+		    spriteStand = asset_get_index("spr"+character+"StandThrow");
+		    spriteStep = asset_get_index("spr"+character+"StandThrow");
+		    spriteJump = asset_get_index("spr"+character+"JumpThrow");
+		    spriteWalk = asset_get_index("spr"+character+"WalkThrow");
+		    spriteClimb = asset_get_index("spr"+character+"ClimbThrow");
+		    spriteGetup = asset_get_index("spr"+character+"ClimbThrow");
+		}
 	}
 	else
 	{

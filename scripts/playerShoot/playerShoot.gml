@@ -2,39 +2,78 @@
 /// @description Handles Mega Man's shooting
 function playerShoot() {
 
-	var box, yy, attackID;
+	var box, yy, attackID, forceShoot, bbX, bbY, bbAngle, pose, angle;
 	if image_xscale == 1
 	    box = bbox_right+6;
 	else
 	    box = bbox_left-6;
-    
-	if character == "Megaman"
+		
+    forceShoot = 0;
+	
+	switch character
 	{
-		switch sprite_index
-		{
-		    case spriteStand: yy = y+4; break;
-		    case spriteStep: yy = y+4; break;
-		    case spriteWalk: yy = y+4; break;
-		    case spriteJump: yy = y+3; break;
-		    case spriteClimb: yy = y+4; break;
-		    default: yy = y+4; break;
-		}
-	}
-	else if character == "Protoman"
-	{
-		switch sprite_index
-		{
-		    case spriteStand: yy = y+7; break;
-		    case spriteStep: yy = y+7; break;
-		    case spriteWalk: yy = y+7; break;
-		    case spriteJump: yy = y+6; break;
-		    case spriteClimb: yy = y+6; break;
-		    default: yy = y+7; break;
-		}
+		case "Megaman":
+			switch sprite_index
+				{
+				    case spriteStand: yy = y+4; break;
+				    case spriteStep: yy = y+4; break;
+				    case spriteWalk: yy = y+4; break;
+				    case spriteJump: yy = y+3; break;
+				    case spriteClimb: yy = y+4; break;
+				    default: yy = y+4; break;
+				}
+		break;
+	
+		case "Protoman":
+				switch sprite_index
+				{
+				    case spriteStand: yy = y+7; break;
+				    case spriteStep: yy = y+7; break;
+				    case spriteWalk: yy = y+7; break;
+				    case spriteJump: yy = y+6; break;
+				    case spriteClimb: yy = y+6; break;
+				    default: yy = y+7; break;
+				}
+		break;
+	
+		case "Bass":
+			switch sprite_index
+				{
+				    case spriteStand: yy = y+3; break;
+				    case spriteStep: yy = y+3; break;
+				    case spriteWalk: yy = y+5; break;
+				    case spriteJump: yy = y+3; break;
+				    case spriteClimb: yy = y+4; break;
+				    default: yy = y+4; break;
+				}
+		break;
+		
+		default:
+			switch sprite_index
+				{
+					case spriteStand: yy = y+4; break;
+					case spriteStep: yy = y+4; break;
+					case spriteWalk: yy = y+4; break;
+					case spriteJump: yy = y+3; break;
+					case spriteClimb: yy = y+4; break;
+					default: yy = y+4; break;
+				}
 	}
 
+if ((character == "Bass") && (global.weapon[playerID] == 0) && keyShoot && (instance_number(objBusterShotBass) < 4))
+{
+    bassBusterTimer += 1
+    if ((bassBusterTimer >= 6))
+    {
+        bassBusterTimer = 0
+        forceShoot = 1
+    }
+}
+else
+    bassBusterTimer = 0;
+
 	//Shooting
-	if keyShootPressed && canShoot == true && (canMove == true || climbing == true || isThrow == true || onRushJet == true)
+	if (keyShootPressed || forceShoot) && canShoot == true && (canMove == true || climbing == true || isThrow == true || onRushJet == true)
 	&& instance_number(objBusterShotCharged) < 1 && global.ammo[global.currentWeapon[playerID]][playerID] > 0
 	{   
 	    if climbing == true
@@ -63,17 +102,122 @@ function playerShoot() {
 	    switch global.weapon[playerID]
 	    {
 	        case megabuster:
-				var busterNum = 3
-				if character == "Protoman" {busterNum = 2}
-	            if instance_multiplayer_check(objBusterShot, busterNum)
-	            {
-	                attackID = instance_create(box+image_xscale*4, yy, objBusterShot);
-	                    attackID.xspeed = image_xscale * 5;
+				if character != "Bass"
+				{
+					var busterNum = 3
+					if character == "Protoman" {busterNum = 2}
+		            if instance_multiplayer_check(objBusterShot, busterNum)
+		            {
+		                attackID = instance_create(box+image_xscale*4, yy, objBusterShot);
+		                    attackID.xspeed = image_xscale * 5;
+							attackID.playerID = playerID;
+		                playSFX(sfxBuster);
+		                isShoot = true;
+		                shootTimer = 0;
+		            }
+				}
+				else
+				{
+					if ((instance_number(objBusterShotBass) < 4))
+	                {
+	                    bbX = 0
+	                    bbY = 0
+	                    bbAngle = 0
+	                    if (keyUp && (((!keyRight) && (!keyLeft)) || (keyRight && keyLeft)))
+	                        bbAngle = 90
+	                    else if keyUp
+	                        bbAngle = 45
+	                    else if keyDown
+	                        bbAngle = 315
+	                    else
+	                        bbAngle = 0
+	                    pose = ""
+	                    if ((climbing == 1))
+	                        pose = "climb"
+	                    else if ((ground == 0))
+	                        pose = "jump"
+	                    else
+	                        pose = "stand"
+	                    switch bbAngle
+	                    {
+	                        case 90:
+	                            if ((pose == "stand"))
+	                            {
+	                                bbX = 17
+	                                bbY = -4
+	                            }
+	                            else if ((pose == "jump"))
+	                            {
+	                                bbX = 18
+	                                bbY = -4
+	                            }
+	                            else if ((pose == "climb"))
+	                            {
+	                                bbX = 16
+	                                bbY = -4
+	                            }
+	                            break
+	                        case 45:
+	                            if ((pose == "stand"))
+	                            {
+	                                bbX = 31
+	                                bbY = 1
+	                            }
+	                            else if ((pose == "jump"))
+	                            {
+	                                bbX = 28
+	                                bbY = 2
+	                            }
+	                            else if ((pose == "climb"))
+	                            {
+	                                bbX = 26
+	                                bbY = 2
+	                            }
+	                            break
+	                        case 0:
+	                            if ((pose == "stand"))
+	                            {
+	                                bbX = 36
+	                                bbY = 13
+	                            }
+	                            else if ((pose == "jump"))
+	                            {
+	                                bbX = 32
+	                                bbY = 12
+	                            }
+	                            else if ((pose == "climb"))
+	                            {
+	                                bbX = 30
+	                                bbY = 13
+	                            }
+	                            break
+	                        case 315:
+	                            if ((pose == "stand"))
+	                            {
+	                                bbX = 31
+	                                bbY = 24
+	                            }
+	                            else if ((pose == "jump"))
+	                            {
+	                                bbX = 28
+	                                bbY = 23
+	                            }
+	                            else if ((pose == "climb"))
+	                            {
+	                                bbX = 26
+	                                bbY = 24
+	                            }
+	                            break
+	                    }
+	                    attackID = instance_create((x + (image_xscale * ((-sprite_get_xoffset(sprite_index)) + bbX))), ((y - sprite_get_yoffset(sprite_index)) + bbY), objBusterShotBass)
+	                    attackID.xscale = image_xscale;
 						attackID.playerID = playerID;
-	                playSFX(sfxBuster);
-	                isShoot = true;
-	                shootTimer = 0;
-	            }
+	                    attackID.angle = bbAngle;
+	                    playSFX(sfxBuster);
+	                    isThrow = 1;
+	                    shootTimer = 0;
+					}
+				}
 	        break;
         
 	        case silvertomahawk:
@@ -336,6 +480,11 @@ function playerShoot() {
 	//While shooting
 	if isShoot == true
 	{
+		if ((character == "Bass") && (sprite_index != spriteWalk))
+		{
+			image_speed = 0;
+			image_index = 0;
+		}
 	    isThrow = false;
 	    shootTimer += 1;
 	    if shootTimer >= 20
@@ -348,7 +497,7 @@ function playerShoot() {
 	    isShoot = false;
     
 	    //To allow shooting in the opposite direction
-	    if keyShootPressed
+	    if keyShootPressed || (character == "Bass" && global.weapon[playerID] == 0)
 	    {
 	        if keyRight && !keyLeft
 	            image_xscale = 1;
@@ -365,15 +514,52 @@ function playerShoot() {
 	        sprite_index = spriteStand;
 	        shootTimer = 5; //20 frames is too much to be frozen for. However, when not frozen, 20 frames looks better
 	    }
-    
+
+	    if ((character == "Bass") && (global.weapon[playerID] == 0) && (!keyShoot) && (shootTimer >= 10) && (climbing == 0) && (isSlide == 0))
+	    {
+	        canMove = 1
+	        canSpriteChange = 1
+	    }
+
 	    if ground == false && climbing == false
 	    {
 	        canMove = true;
 	        canSpriteChange = true;
 	    }
-    
+
+		if ((character == "Bass") && (global.weapon[playerID] == 0) && (sprite_index != spriteWalk))
+	    {
+	        image_speed = 0
+	        if (keyUp && (((!keyRight) && (!keyLeft)) || (keyRight && keyLeft)))
+	            image_index = 1
+	        else if (keyUp && keyRight)
+	        {
+	            image_index = 2
+	            image_xscale = 1
+	        }
+	        else if (keyUp && keyLeft)
+	        {
+	            image_index = 2
+	            image_xscale = -1
+	        }
+	        else if (keyDown && (((!keyRight) && (!keyLeft)) || (keyRight && keyLeft)))
+	            image_index = 3
+	        else if (keyDown && keyRight)
+	        {
+	            image_index = 3
+	            image_xscale = 1
+	        }
+	        else if (keyDown && keyLeft)
+	        {
+	            image_index = 3
+	            image_xscale = -1
+	        }
+			else
+				image_index = 0
+	    }
+		
 	    shootTimer += 1;
-	    if shootTimer >= 20
+	    if shootTimer >= 20 && !(character == "Bass" && (global.weapon[playerID] == 0) && keyShoot)
 	    {
 	        isThrow = false;
 	        if ground == true
@@ -388,7 +574,7 @@ function playerShoot() {
 	//Charging
 	if global.enableCharge == true
 	{
-	    if global.weapon[playerID] == megabuster && (keyShoot || (isSlide == true && chargeTimer != 0))
+	    if global.weapon[playerID] == megabuster && character != "Bass" && (keyShoot || (isSlide == true && chargeTimer != 0))
 	    {
 	        if (canMove == true || isSlide == true || climbing == true) && isShoot == false
 	        {
@@ -450,6 +636,29 @@ function playerShoot() {
 		                        break;
 		                    }
 						}
+						if character == "Roll"
+						{
+		                    switch (chargeTimer/2 mod 3)
+		                    {
+		                        case 0: //Light blue helmet, black shirt, blue outline
+		                            global.primaryCol[playerID] = make_color_rgb(0, 232, 216);
+		                            global.secondaryCol[playerID] = c_black;
+		                            global.outlineCol[playerID] = make_color_rgb(0, 120, 248);
+		                        break;
+                        
+		                        case 1: //Black helmet, blue shirt, light blue outline
+		                            global.primaryCol[playerID] = c_black;
+		                            global.secondaryCol[playerID] = make_color_rgb(0, 120, 248);
+		                            global.outlineCol[playerID] = make_color_rgb(0, 232, 216);
+		                        break;
+                        
+		                        case 2: //Blue helmet, light blue shirt, blue outline
+		                            global.primaryCol[playerID] = make_color_rgb(0, 120, 248);
+		                            global.secondaryCol[playerID] = make_color_rgb(0, 232, 216);
+		                            global.outlineCol[playerID] = c_black;
+		                        break;
+		                    }
+						}
 						else if character == "Protoman"
 						{
 							switch (chargeTimer/2 mod 3) 
@@ -477,7 +686,7 @@ function playerShoot() {
 	            }
 	        }
 	    }
-	    else if global.weapon[playerID] == megabuster && !keyShoot      //Release the charge shot
+	    else if global.weapon[playerID] == megabuster && character != "Bass" && !keyShoot      //Release the charge shot
 	    {
 	        if (canMove == true || climbing == true) && chargeTimer != 0
 	        {

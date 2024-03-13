@@ -14,6 +14,16 @@ switch global.weapon[playerID]
 	        global.primaryCol[playerID] = make_color_rgb(222, 41, 0);
 	        global.secondaryCol[playerID] = make_color_rgb(189, 189, 189);	
 		}
+		else if character == "Bass"
+		{
+	        global.primaryCol[playerID] = make_color_rgb(111,111,111);
+	        global.secondaryCol[playerID] = make_color_rgb(248,152,54);
+		}
+		else if character == "Roll"
+		{
+	        global.primaryCol[playerID] = make_color_rgb(0, 120, 248);
+	        global.secondaryCol[playerID] = make_color_rgb(0, 232, 216);
+		}
     break;
     
     case rushcoil:

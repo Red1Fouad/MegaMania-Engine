@@ -1,5 +1,5 @@
 //Colors
-character = "Megaman";
+character = "Bass";
 
 playerSetColors();
 //Player ID
@@ -100,6 +100,12 @@ movedByPlatform = false;
 movedPlatformID = -20;
 canSlide = true;
 canSlideTimer = 0;
+jumpedFromSlide = 0;
+bassBusterTimer = 0;
+groundFrames = 0;
+didDoubleJump = 0;
+justClimbed = 0;
+
 
 global.outlineCol[playerID] = c_black;
 
@@ -113,18 +119,10 @@ spriteClimb = sprMegamanClimb;
 spriteGetup = sprMegamanClimbGetup; //Can also be sprMegamanClimbShoot, thus it's variable
 
 //Static sprites
-if character == "Megaman"
-{
-	spriteSlide = sprMegamanSlide;
-	spriteHit = sprMegamanHit;
-	spriteTeleport = sprMegamanTeleport;
-}
-else if character == "Protoman"
-{
-	spriteSlide = sprProtomanSlide;
-	spriteHit = sprProtomanHit;
-	spriteTeleport = sprProtomanTeleport;
-}
+
+spriteSlide = asset_get_index("spr"+character+"Slide");
+spriteHit = asset_get_index("spr"+character+"Hit");
+spriteTeleport = asset_get_index("spr"+character+"Teleport");
 
 //Set the correct whitemask colors
 event_user(0);

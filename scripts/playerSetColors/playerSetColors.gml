@@ -14,6 +14,18 @@ function playerSetColors(){
 		secondary_color = make_color_rgb(189,189,189);
 		outline_color = make_color_rgb(0,0,0);
 		break;
+		
+		case "Bass":
+		primary_color = make_color_rgb(111,111,111);
+		secondary_color = make_color_rgb(248,152,56);
+		outline_color = make_color_rgb(0,0,0);
+		break;
+		
+		case "Roll": 
+		primary_color = make_color_rgb(0,112,236);
+		secondary_color = make_color_rgb(0,232,216);
+		outline_color = make_color_rgb(0,0,0);
+		break;
 	}
 
 }

@@ -3,6 +3,7 @@
 function playerStep() {
 
 var scarfSpeed = 0.15;
+var useSpeed = 0;
 	//Check for ground
 	if place_meeting(x, y+global.yspeed[playerID]+1, objSolid) || (place_meeting(x, y+global.yspeed[playerID]+1, objTopSolid)  && global.yspeed[playerID] >= 0)
 	|| (place_meeting(x, y+global.yspeed[playerID]+1, prtMovingPlatformJumpthrough) && global.yspeed[playerID] >= 0)
@@ -102,7 +103,10 @@ var scarfSpeed = 0.15;
 
 	//Can we do a short hop? (Placed earlier in the code to fix the 'jump on the frame you land and you can't do a short hop' bug
 	if !(ground == false && canGravity == true)
-	    canMinJump = true;
+	{
+	    jumpedFromSlide = 0;
+		canMinJump = true;
+	}
 
 
 	//Should the landing sound be played when colliding with a floor? (Disabled on ladders, for example)
@@ -234,7 +238,7 @@ var scarfSpeed = 0.15;
 	            if canSpriteChange == true
 	            {
 	                sprite_index = spriteStand;
-	                if character == "Megaman" 
+	                if character == "Megaman" || character == "Bass" || character == "Roll"
 					{
 						image_speed = 0;
 		                image_index = blinkImage;
@@ -255,18 +259,23 @@ var scarfSpeed = 0.15;
 	        if canSpriteChange == true
 	            sprite_index = spriteJump;
             
+			if character == "Bass" && jumpedFromSlide == 1
+	            useSpeed = slideSpeed
+	        else
+	            useSpeed = walkSpeed
+			
 	        if keyLeft && !keyRight && !place_meeting(x-1, y, objSolid)
 	        {
 	            if !place_meeting(x-1, y, prtMovingPlatformSolid)
 	            {
-	                global.xspeed[playerID] = -walkSpeed;
+	                global.xspeed[playerID] = -useSpeed;
 	                image_xscale = -1;
 	            }
 	            else
 	            {
 	                if instance_place(x-1, y, prtMovingPlatformSolid).dead == true //Still allow movement when the moving platform is despawned
 	                {
-	                    global.xspeed[playerID] = -walkSpeed;
+	                    global.xspeed[playerID] = -useSpeed;
 	                    image_xscale = -1;
 	                }
 	            }
@@ -275,14 +284,14 @@ var scarfSpeed = 0.15;
 	        {
 	            if !place_meeting(x+1 + (prevXScale == -1), y, prtMovingPlatformSolid)
 	            {
-	                global.xspeed[playerID] = walkSpeed;
+	                global.xspeed[playerID] = useSpeed;
 	                image_xscale = 1;
 	            }
 	            else
 	            {
 	                if instance_place(x+1 + (prevXScale == -1), y, prtMovingPlatformSolid).dead == true //Still allow movement when the moving platform is despawned
 	                {
-	                    global.xspeed[playerID] = walkSpeed;
+	                    global.xspeed[playerID] = useSpeed;
 	                    image_xscale = 1;
 	                }
 	            }
@@ -306,7 +315,7 @@ var scarfSpeed = 0.15;
 	        if global.xspeed[playerID] == 0
 	        {
 	            sprite_index = spriteStand;
-	            if character == "Megaman" 
+	            if character == "Megaman" || character == "Bass" || character == "Roll"
 				{
 					image_index = blinkImage;
 		            image_speed = 0;
@@ -330,9 +339,9 @@ var scarfSpeed = 0.15;
 
 
 	//Blinking animation
-	if character == "Megaman"
+	if character == "Megaman" || character == "Bass" || character == "Roll"
 	{
-		if sprite_index == sprMegamanStand //Don't use spriteStand as this could also be sprMegamanStandShoot!
+		if sprite_index == asset_get_index("spr"+character+"Stand") //Don't use spriteStand as this could also be sprMegamanStandShoot! 
 		{
 		    if blinkImage == 0
 		    {
@@ -430,7 +439,7 @@ var scarfSpeed = 0.15;
 
 
 	//Jumping
-	if (canMove == true || isThrow == true || onRushJet == true) && ground == true && keyJumpPressed && !keyDown
+	if (canMove == true || isThrow == true || onRushJet == true) && ((ground == 1) || ((character == "Bass") && (global.enableDoubleJump == 1) && (didDoubleJump == 0) && (justClimbed == 0) && (climbing == 0))) && keyJumpPressed && !keyDown
 	{
 	    if isThrow == true  //We can jump-cancel the throwing animation (after throwing a Metal Blade, Pharaoh Shot etc)
 	    {
@@ -442,14 +451,25 @@ var scarfSpeed = 0.15;
 	    {
 	        canMove = true;
 	    }
-    
+		
+		if ground == 0 && justClimbed == 0
+	    {
+	        didDoubleJump = 1
+	        jumpedFromSlide = 0
+	        canMinJump = 1
+	        //instance_create(sprite_get_xcenter(), (bbox_bottom - 5), objDoubleJumpEffect)
+	    }
+	
 	    global.yspeed[playerID] = -currentJumpSpeed;
 	    ground = false;
 	    y -= 1; //To negate the prevGround y += 1
 	    sprite_index = spriteJump;
 	}
 
+	if ground == true
+		didDoubleJump = 0;
 
+	justClimbed = climbing;
 	//Minjumping (lowering jump when the jump button is released)
 	if ground == false && global.yspeed[playerID] < 0 && !keyJump && canMinJump == true
 	{
@@ -495,7 +515,10 @@ var scarfSpeed = 0.15;
 	            canMove = false;
 	            canSpriteChange = false;
 	            sprite_index = spriteSlide;
-	            mask_index = mskMegamanSlide;
+				if character == "Bass"
+					mask_index = mskMegaman
+				else
+					mask_index = mskMegamanSlide;
             
 				if (place_meeting(x,y,prtSlope)) {
 					while (place_meeting(x,y,prtSlope)) {y--;}
@@ -642,12 +665,16 @@ var scarfSpeed = 0.15;
 	                        global.xspeed[playerID] = 0;
 	                    else
 	                        global.xspeed[playerID] = walkSpeed * image_xscale;
-                    
-	                    if keyJumpPressed && !keyDown
+					
+					
+	                    if keyJumpPressed && (!keyDown)
 	                    {
 	                        global.yspeed[playerID] = -jumpSpeed;
 	                        ground = false;
+							jumpedFromSlide = 1;
 	                        y -= 1; //To negate the prevGround y += 1
+							if (ground == 0) && (slideTimer < slideFrames) && (character == "Bass") && (global.enableDoubleJump == 1) && (didDoubleJump == 0)
+								didDoubleJump = 1;
 	                    }
 	                }
 	            }
@@ -672,6 +699,7 @@ var scarfSpeed = 0.15;
 	        canSlideTimer += 1;
 	    else
 	        canSlide = true;
+	jumpedFromSlide = 0;
 	}
 
 
@@ -717,6 +745,8 @@ var scarfSpeed = 0.15;
 	{
 	    isStep = false;
 	    canInitStep = false;
+		jumpedFromSlide = 0;
+		didDoubleJump = 0;
     
 	    //Movement
 	    if keyUp && !keyDown && isShoot == false && isThrow == false

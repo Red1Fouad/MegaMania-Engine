@@ -128,16 +128,6 @@ if !instance_exists(objSectionSwitcher) && !climbing && !isSlide && !global.froz
 
 
 //STATIC SPRITES HOTFIX
-if character == "Megaman"
-{
-	spriteSlide = sprMegamanSlide;
-	spriteHit = sprMegamanHit;
-	spriteTeleport = sprMegamanTeleport;
-}
-else if character == "Protoman"
-{
-	spriteSlide = sprProtomanSlide;
-	spriteHit = sprProtomanHit;
-	spriteTeleport = sprProtomanTeleport;
-}
-
+spriteSlide = asset_get_index("spr"+character+"Slide");
+spriteHit = asset_get_index("spr"+character+"Hit");
+spriteTeleport = asset_get_index("spr"+character+"Teleport");
