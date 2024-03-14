@@ -39,6 +39,18 @@ pauseKey2 = vk_numpad8;
 weaponSwitchLeftKey2 = vk_numpad4;
 weaponSwitchRightKey2 = vk_numpad6;
 
+//Gamepad Buttons
+leftButton = gp_padl;
+rightButton = gp_padr;
+upButton = gp_padu;
+downButton = gp_padd;
+jumpButton = gp_face1;
+shootButton = gp_face3;
+slideButton = gp_face2;
+pauseButton = gp_start;
+weaponSwitchLeftButton = gp_shoulderlb;
+weaponSwitchRightButton = gp_shoulderrb;
+
 for (var i = 0; i <= 99; i++)
 {
     prevHorAxis[i] = 0
@@ -52,6 +64,7 @@ global.sectionTop = 0;
 global.sectionBottom = 0;
 
 //Variables
+global.GP = -1;
 global._health = array_create(global.playersMax + 1, 28);
 global.weapon = array_create(global.playersMax + 1, 0);  //Can have values like megabuster, silvertomahawk etc for all weapons in the game, even those that are not on the pause menu
 global.currentWeapon = array_create(global.playersMax + 1, 0);   //Only the weapons used in the level; only those that are on the pause menu
@@ -174,3 +187,6 @@ if global.levelStart == true
     alarm[0] = 1;
 }
 
+
+//Loading Configs
+load_configs();

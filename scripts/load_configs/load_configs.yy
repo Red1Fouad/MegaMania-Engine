@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"load_configs",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"load_configs",
+  "parent":{
+    "name":"Save-Load",
+    "path":"folders/Scripts/Save-Load.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
