@@ -59,7 +59,6 @@
     {"name":"inst_190BB89E","path":"rooms/rmTest/rmTest.yy",},
     {"name":"inst_1406CAC5","path":"rooms/rmTest/rmTest.yy",},
     {"name":"inst_40C19426","path":"rooms/rmTest/rmTest.yy",},
-    {"name":"inst_52BFFD6B","path":"rooms/rmTest/rmTest.yy",},
     {"name":"inst_17473AED","path":"rooms/rmTest/rmTest.yy",},
     {"name":"inst_1C3E38B2","path":"rooms/rmTest/rmTest.yy",},
   ],
@@ -78,7 +77,6 @@
         {"$GMRInstance":"","%Name":"inst_1406CAC5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1406CAC5","objectId":{"name":"objSectionArrowDown","path":"objects/objSectionArrowDown/objSectionArrowDown.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":144.0,"y":224.0,},
       ],"layers":[],"name":"Sections","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":false,},
     {"$GMRInstanceLayer":"","%Name":"Enemies","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"","%Name":"inst_52BFFD6B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_52BFFD6B","objectId":{"name":"objSydecka","path":"objects/objSydecka/objSydecka.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":240.0,"y":448.0,},
         {"$GMRInstance":"","%Name":"inst_17473AED","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_17473AED","objectId":{"name":"objColton","path":"objects/objColton/objColton.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":384.0,"y":448.0,},
         {"$GMRInstance":"","%Name":"inst_1C3E38B2","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1C3E38B2","objectId":{"name":"objMM1Met","path":"objects/objMM1Met/objMM1Met.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":416.0,"y":320.0,},
       ],"layers":[],"name":"Enemies","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},

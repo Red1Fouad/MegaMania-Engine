@@ -21,8 +21,8 @@ switch global.weapon[playerID]
 		}
 		else if character == "Roll"
 		{
-	        global.primaryCol[playerID] = make_color_rgb(0, 120, 248);
-	        global.secondaryCol[playerID] = make_color_rgb(0, 232, 216);
+	        global.primaryCol[playerID] = make_color_rgb(216, 40, 0);
+	        global.secondaryCol[playerID] = make_color_rgb(245, 245, 245);
 		}
     break;
     

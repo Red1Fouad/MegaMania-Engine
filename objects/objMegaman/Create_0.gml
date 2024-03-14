@@ -1,5 +1,5 @@
 //Colors
-character = "Bass";
+character = "Roll";
 
 playerSetColors();
 //Player ID
@@ -111,12 +111,12 @@ global.outlineCol[playerID] = c_black;
 
 
 //Variable sprites
-spriteStand = sprMegamanStand;
-spriteJump = sprMegamanJump;
-spriteWalk = sprMegamanWalk;
-spriteStep = sprMegamanStep;
-spriteClimb = sprMegamanClimb;
-spriteGetup = sprMegamanClimbGetup; //Can also be sprMegamanClimbShoot, thus it's variable
+spriteStand = asset_get_index("spr"+character+"Stand");
+spriteJump = asset_get_index("spr"+character+"Jump");
+spriteWalk = asset_get_index("spr"+character+"Walk");
+spriteStep = asset_get_index("spr"+character+"Step");
+spriteClimb = asset_get_index("spr"+character+"Climb");
+spriteGetup = asset_get_index("spr"+character+"Getup"); //Can also be sprMegamanClimbShoot, thus it's variable
 
 //Static sprites
 

@@ -22,8 +22,8 @@ function playerSetColors(){
 		break;
 		
 		case "Roll": 
-		primary_color = make_color_rgb(0,112,236);
-		secondary_color = make_color_rgb(0,232,216);
+		primary_color = make_color_rgb(216,40,0);
+		secondary_color = make_color_rgb(245,245,245);
 		outline_color = make_color_rgb(0,0,0);
 		break;
 	}

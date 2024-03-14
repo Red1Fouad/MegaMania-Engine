@@ -3,11 +3,43 @@
 function playerShoot() {
 
 	var box, yy, attackID, forceShoot, bbX, bbY, bbAngle, pose, angle;
-	if image_xscale == 1
-	    box = bbox_right+6;
-	else
-	    box = bbox_left-6;
+	
+	switch character
+	{
+		case "Megaman":
+		if image_xscale == 1
+		    box = bbox_right+6;
+		else
+		    box = bbox_left-6;	
+		break;
 		
+		case "Protoman":
+		if image_xscale == 1
+		    box = bbox_right+5;
+		else
+		    box = bbox_left-5;	
+		break;
+		
+		case "Bass":
+		if image_xscale == 1
+		    box = bbox_right+6;
+		else
+		    box = bbox_left-6;	
+		break;
+		
+		case "Roll":
+		if image_xscale == 1
+		    box = bbox_right+4;
+		else
+		    box = bbox_left-4;	
+		break;
+		
+		default:
+		if image_xscale == 1
+		    box = bbox_right+6;
+		else
+		    box = bbox_left-6;	
+	}
     forceShoot = 0;
 	
 	switch character
@@ -45,6 +77,18 @@ function playerShoot() {
 				    case spriteJump: yy = y+3; break;
 				    case spriteClimb: yy = y+4; break;
 				    default: yy = y+4; break;
+				}
+		break;
+		
+		case "Roll":
+			switch sprite_index
+				{
+				    case spriteStand: yy = y+6; break;
+				    case spriteStep: yy = y+6; break;
+				    case spriteWalk: yy = y+6; break;
+				    case spriteJump: yy = y+7; break;
+				    case spriteClimb: yy = y+5; break;
+				    default: yy = y+7; break;
 				}
 		break;
 		
