@@ -1,3 +1,4 @@
+damage = 2;
 playerID = 1;
 xspeed = 0;
 yspeed = 0;

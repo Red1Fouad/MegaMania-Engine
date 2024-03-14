@@ -706,6 +706,7 @@ else
 	            if chargeTimer < chargeTime
 	            {
 	                attackID = instance_create(box+image_xscale*6, yy, objBusterShotHalfCharged);
+						attackID.playerID = playerID;
 	                    attackID.xspeed = image_xscale * 5;
 	                    attackID.image_xscale = image_xscale;
 	                playSFX(sfxBusterHalfCharged);
@@ -713,6 +714,7 @@ else
 	            else
 	            {
 	                attackID = instance_create(box+image_xscale*14, yy, objBusterShotCharged);
+						attackID.playerID = playerID;
 	                    attackID.xspeed = image_xscale * 5.5;
 	                    attackID.image_xscale = image_xscale;
 	                playSFX(sfxBusterCharged);

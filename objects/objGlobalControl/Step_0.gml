@@ -1,3 +1,6 @@
+//Hotfix for Mac users
+if os_macosx room_speed = 60;
+
 if instance_exists(objMegaman)
 {
     x = objMegaman.x;

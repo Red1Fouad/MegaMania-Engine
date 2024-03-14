@@ -673,8 +673,8 @@ var useSpeed = 0;
 	                        ground = false;
 							jumpedFromSlide = 1;
 	                        y -= 1; //To negate the prevGround y += 1
-							if (ground == 0) && (slideTimer < slideFrames) && (character == "Bass") && (global.enableDoubleJump == 1) && (didDoubleJump == 0)
-								didDoubleJump = 1;
+							/*if (ground == 0) && (slideTimer < slideFrames) && (character == "Bass") && (global.enableDoubleJump == 1) && (didDoubleJump == 0)
+								didDoubleJump = 1;*/
 	                    }
 	                }
 	            }

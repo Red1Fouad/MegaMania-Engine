@@ -6,6 +6,9 @@ if global.frozen == false
     if position_meeting(x, bbox_top-1-vspeed, objWater) && !position_meeting(x, bbox_top-1, objWater)
     || place_meeting(x, y, objSolid) || place_meeting(x, y, prtMovingPlatformSolid)
         instance_destroy();
+
+	if !place_meeting(x, y, objWater)
+        instance_destroy();
 }
 else
 {
