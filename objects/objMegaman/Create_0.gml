@@ -1,5 +1,5 @@
 //Colors
-character = "Roll";
+character = global.playerName;
 
 playerSetColors();
 //Player ID

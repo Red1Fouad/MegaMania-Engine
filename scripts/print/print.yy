@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"print",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"print",
+  "parent":{
+    "name":"compatibility",
+    "path":"folders/Scripts/compatibility.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
