@@ -15,7 +15,6 @@ global.viewHeight = camera_get_view_height(global.view);
 global.enableDoubleJump = 1;
 //Player ID
 global.playerID = array_create(global.playersMax + 1, 1);
-global.playerName = "Megaman"
 
 //Keys
 leftKey = vk_left;

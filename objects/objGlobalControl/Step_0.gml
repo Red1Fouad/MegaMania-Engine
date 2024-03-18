@@ -31,7 +31,10 @@ if keyboard_check_pressed(vk_f11)
 	global._health[2] = 0;
 }
 //if keyboard_check_pressed(vk_escape) game_end();
-	
+
+//Rename weapon depending on character
+weaponName();
+
 //Resize Game
 var sizeToWrite = -1
 if keyboard_check_pressed(vk_f1)
