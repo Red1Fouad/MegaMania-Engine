@@ -11,6 +11,7 @@ function playerHandleSprites() {
 	    spriteWalk = asset_get_index("spr"+character+"WalkShoot");
 	    spriteClimb = asset_get_index("spr"+character+"ClimbShoot");
 	    spriteGetup = asset_get_index("spr"+character+"ClimbShoot");
+		spriteDuck = asset_get_index("spr"+character+"DuckShoot");
 	}
 	
 	else if isThrow == true
@@ -32,6 +33,7 @@ function playerHandleSprites() {
 		    spriteWalk = asset_get_index("spr"+character+"WalkThrow");
 		    spriteClimb = asset_get_index("spr"+character+"ClimbThrow");
 		    spriteGetup = asset_get_index("spr"+character+"ClimbThrow");
+			spriteDuck = asset_get_index("spr"+character+"DuckShoot");
 		}
 	}
 	else
@@ -42,6 +44,7 @@ function playerHandleSprites() {
 	    spriteWalk = asset_get_index("spr"+character+"Walk");
 	    spriteClimb = asset_get_index("spr"+character+"Climb");
 	    spriteGetup = asset_get_index("spr"+character+"ClimbGetup");
+		spriteDuck = asset_get_index("spr"+character+"Duck");
 	}
 
 

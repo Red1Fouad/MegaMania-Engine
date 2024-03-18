@@ -942,4 +942,17 @@ var useSpeed = 0;
 	prevXScale = image_xscale;
 
 
+	if character == "Protoman" && canDuck && (global.xspeed[playerID] == 0 || place_meeting(x, y+1, objIce) && !keyLeft && !keyRight) && keyDown && canSpriteChange && ground == 1 && teleporting == 0 && global.frozen == 0 && !isSlide
+		ducking = true;
+	else
+		ducking = false;
+	
+	if ducking == true
+	{
+		sprite_index = spriteDuck
+	}
+	else
+	{
+		if !isSlide mask_index = mskMegaman;
+	}
 }

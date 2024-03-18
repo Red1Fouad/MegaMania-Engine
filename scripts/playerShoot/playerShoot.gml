@@ -57,14 +57,16 @@ function playerShoot() {
 		break;
 	
 		case "Protoman":
+			var duckShoot;
+			if ducking duckShoot = 2 else duckShoot = 0;
 				switch sprite_index
 				{
-				    case spriteStand: yy = y+7; break;
-				    case spriteStep: yy = y+7; break;
-				    case spriteWalk: yy = y+7; break;
-				    case spriteJump: yy = y+6; break;
-				    case spriteClimb: yy = y+6; break;
-				    default: yy = y+7; break;
+				    case spriteStand: yy = y+7+duckShoot; break;
+				    case spriteStep: yy = y+7+duckShoot; break;
+				    case spriteWalk: yy = y+7+duckShoot; break;
+				    case spriteJump: yy = y+6+duckShoot; break;
+				    case spriteClimb: yy = y+6+duckShoot; break;
+				    default: yy = y+7+duckShoot; break;
 				}
 		break;
 	

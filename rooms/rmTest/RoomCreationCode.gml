@@ -1,1 +1,1 @@
-playMusicVolumeLoopPoint(bgmTest, 0.6, 0, 1);
+playMusicVolumeLoopPoint(bgmTest, 0.6, 260717/5070024, 4842011/5070024);

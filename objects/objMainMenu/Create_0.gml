@@ -1,20 +1,42 @@
+/// Create Event
+
+// Initialization
 draw_set_color(c_white);
 draw_set_font(global.MM3font);
 draw_set_valign(fa_top);
 draw_set_halign(fa_center);
 
-menu[0] = "NEW GAME";
-var current_item = 1;
-
-if os_browser == browser_not_a_browser {
-    menu[current_item] = "KEY CONFIG";
-    current_item++;
-    menu[current_item] = "GAMEPAD CONFIG";
-    current_item++;    
+// Play background music if not already playing
+if !audio_is_playing(bgmMainMenu) {
+    playMusicVolumeLoopPoint(bgmMainMenu, 0.6, 0, 1);
 }
 
-menu[current_item] = "BACK";
+// Menu items
+menu = ds_list_create();
+menu[| 0] = "NEW GAME";
+if os_browser == browser_not_a_browser && os_type != os_android && os_type != os_ios {
+    menu[| ds_list_size(menu)] = "KEY CONFIG";
+    menu[| ds_list_size(menu)] = "GAMEPAD CONFIG";
+}
+menu[| ds_list_size(menu)] = "BACK";
 
-num_menu_items = array_length_1d(menu);
-
+num_menu_items = ds_list_size(menu);
 selected = 0;
+
+// Define menu actions
+if os_browser == browser_not_a_browser && os_type != os_android && os_type != os_ios
+{
+	menu_actions = [
+	    rmPlayerSelect,         // "NEW GAME"
+	    rmKeyConfig,            // "KEY CONFIG"
+	    rmJoyConfig,            // "GAMEPAD CONFIG"
+	    rmDisclaimer            // "BACK"
+	];
+}
+else
+{
+	menu_actions = [
+	    rmPlayerSelect,         // "NEW GAME"
+	    rmDisclaimer            // "BACK"
+	];
+}

@@ -3,6 +3,11 @@ draw_set_font(global.MM3font);
 draw_set_valign(fa_top);
 draw_set_halign(fa_center);
 
+if !audio_is_playing(bgmMainMenu)
+{
+	 playMusicVolumeLoopPoint(bgmMainMenu,0.6,0,1)
+}
+
 waiting = false;
 
 menu[0] = "LEFT";

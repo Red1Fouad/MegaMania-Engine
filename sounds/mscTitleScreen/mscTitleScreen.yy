@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":1,
   "conversionMode":0,
-  "duration":22.485556,
+  "duration":89.81004,
   "name":"mscTitleScreen",
   "parent":{
     "name":"Music",

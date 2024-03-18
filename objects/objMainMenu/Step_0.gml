@@ -1,22 +1,20 @@
+/// Step Event
+
 if (instance_exists(objFadeout)) exit;
 
-var menu_actions = [
-    rmPlayerSelect,         // "NEW GAME"
-    rmKeyConfig,    // "KEY CONFIG"
-    rmJoyConfig,    // "GAMEPAD CONFIG"
-    rmDisclaimer    // "BACK"
-];
+// Menu navigation
+var _move = 0;
+if (global.keyUpPressed) _move = -1;
+else if (global.keyDownPressed) _move = 1;
 
-if global.keyUpPressed {
-    selected = (selected - 1 + num_menu_items) mod num_menu_items;
+if _move != 0 {
+    selected = (selected + _move + num_menu_items) mod num_menu_items;
     playSFX(sfxMenuMove);
 }
-else if global.keyDownPressed {
-    selected = (selected + 1) mod num_menu_items;
-    playSFX(sfxMenuMove);
-}
-else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed {
-    playSFX(sfxMenuSelect);            
+
+// Menu selection
+if global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed {
+    playSFX(sfxMenuSelect);
     var ID = instance_create(0, 0, objFadeout);
     ID.type = "room";
     ID.myRoom = menu_actions[selected];

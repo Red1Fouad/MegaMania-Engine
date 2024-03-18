@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":1,
   "conversionMode":0,
-  "duration":236.87303,
+  "duration":114.96653,
   "name":"bgmTest",
   "parent":{
     "name":"Music",

@@ -48,7 +48,9 @@ hitTime = 20; //The amount of frames you experience knockback after getting hit
 
 
 //Variables
+canDuck = false;
 ground = false;
+ducking = 0;
 prevGround = false;
 prevXScale = image_xscale;
 isStep = false;
