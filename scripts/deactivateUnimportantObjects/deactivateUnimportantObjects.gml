@@ -8,7 +8,6 @@ function deactivateUnimportantObjects() {
 	instance_activate_object(objMegaman);
 	instance_activate_object(objGlobalControl);
 	instance_activate_object(objHealthWeaponBar);
-	instance_activate_object(objAndroidButton);
 
 	instance_activate_object(objBossDoor);
 	

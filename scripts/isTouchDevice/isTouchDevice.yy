@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"isTouchDevice",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"isTouchDevice",
+  "parent":{
+    "name":"Gamepad",
+    "path":"folders/Scripts/Gamepad.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
