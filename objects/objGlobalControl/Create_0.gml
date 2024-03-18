@@ -29,6 +29,25 @@ pauseKey = vk_space;
 weaponSwitchLeftKey = vk_numpad1;
 weaponSwitchRightKey = vk_numpad3;
 
+// Mobile Inputs created on startup
+global.inputSize = [3, 4]; //change later?
+if (isTouchDevice()) {
+	vKeyDPADY = 42;
+	global.vKeys = [
+		virtual_key_add(20 * global.inputSize[1], (156-vKeyDPADY) * global.inputSize[1], 38 * global.inputSize[1], 16 * global.inputSize[1], upKey),
+		virtual_key_add(20 * global.inputSize[1], (189-vKeyDPADY) * global.inputSize[1], 38 * global.inputSize[1], 16 * global.inputSize[1], downKey),
+		virtual_key_add(12 * global.inputSize[1], (164-vKeyDPADY) * global.inputSize[1], 18 * global.inputSize[1], 36 * global.inputSize[1], leftKey),
+		virtual_key_add(45 * global.inputSize[1], (164-vKeyDPADY) * global.inputSize[1], 18 * global.inputSize[1], 36 * global.inputSize[1], rightKey),
+		
+		virtual_key_add(204 * global.inputSize[0], 188 * global.inputSize[0], 30 * global.inputSize[1], 30 * global.inputSize[1], jumpKey),
+		virtual_key_add(183 * global.inputSize[0], 154 * global.inputSize[0], 30 * global.inputSize[1], 30 * global.inputSize[1], shootKey),
+		virtual_key_add(155 * global.inputSize[0], 186 * global.inputSize[0], 30 * global.inputSize[1], 30 * global.inputSize[1], slideKey),
+		virtual_key_add((221+3) * global.inputSize[0], 127 * global.inputSize[0], 30 * global.inputSize[1], 15 * global.inputSize[1], weaponSwitchRightKey),
+		virtual_key_add((221+3) * global.inputSize[0], 142 * global.inputSize[0], 30 * global.inputSize[1], 15 * global.inputSize[1], weaponSwitchLeftKey),
+		virtual_key_add((224-8) * global.inputSize[0], 0 * global.inputSize[0], 30 * global.inputSize[1], 30 * global.inputSize[1], pauseKey)
+	];
+}
+
 leftKey2 = ord("Q");
 rightKey2 = ord("D");
 upKey2 = ord("Z");
