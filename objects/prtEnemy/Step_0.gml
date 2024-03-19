@@ -56,3 +56,11 @@ if dead == true
     exit;
 }
 
+if !global.frozen and !dead {
+    x += xspeed;
+    if (variable_instance_exists(id,"ground"))
+    {
+        if (ground) {doSlopePhysics(xspeed,yspeed);}
+    }
+    y += yspeed;
+}

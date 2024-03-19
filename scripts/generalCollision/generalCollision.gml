@@ -2,15 +2,25 @@
 /// @description Handles a general object's collision code
 function generalCollision() {
 
+	var colliding = !place_free(x, y);
 
 	//Floor
-	var mySolid;
-	mySolid = instance_place(x, y+yspeed, objSolid);
-	if mySolid >= 0 && yspeed > 0
-	{
-	    y = mySolid.y;
-	    while place_meeting(x, y, mySolid)
-	        y -= 1;
+	var mySolid = instance_place(x, y+yspeed, objSolid);
+	if mySolid >= 0 and yspeed > 0 and !colliding {
+	    var ind = object_get_parent(mySolid.object_index);
+	    if ind == prtSlope {
+	        y = mySolid.bbox_bottom;
+	        if (!place_meeting(x,y,mySolid)) {
+	            while (!place_meeting(x,y,mySolid)) {y--;}
+	        }
+	    }
+	    else {
+	        y = mySolid.bbox_top;
+	    }
+	        while place_meeting(x, y, mySolid)
+	            y -= 1;
+    
+	    //y = mySolid.y - (sprite_height - sprite_yoffset);
 	    ground = true;
 	    yspeed = 0;
 	}
@@ -18,14 +28,21 @@ function generalCollision() {
 
 	//Wall
 	mySolid = instance_place(x+xspeed, y, objSolid);
-	if mySolid >= 0 && xspeed != 0
-	{    
-	    if xspeed < 0
-	        x = mySolid.x + 16 + (x - (bbox_left-1));
-	    else
-	        x = mySolid.x - (bbox_right+1 - x) - 1;
-        
-	    xspeed = 0;
+	if mySolid >= 0 && xspeed != 0 && !colliding {    
+	    var ind = object_get_parent(mySolid.object_index);
+	    var ignore = ind == prtSlope;
+	    if (!ignore) {
+	        if (place_meeting(x+xspeed,y,prtSlope)) {ignore = true;}
+	    }
+    
+	    if (!ignore) {
+	        if xspeed < 0
+	            x = mySolid.x + mySolid.sprite_width + (x - (bbox_left-1));
+	        else
+	            x = mySolid.x - (bbox_right+1 - x) - 1;
+            
+	        xspeed = 0;
+	    }
 	}
 
 

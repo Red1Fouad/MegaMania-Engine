@@ -10,6 +10,7 @@ function deactivateUnimportantObjects() {
 	instance_activate_object(objHealthWeaponBar);
 
 	instance_activate_object(objBossDoor);
+	instance_activate_object(objBossDoorH);
 	
 	instance_activate_object(objMultiplayerBorderL);
 	instance_activate_object(objMultiplayerBorderR);

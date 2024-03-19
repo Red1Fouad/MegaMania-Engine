@@ -12,7 +12,7 @@ if global.checkpoint == true && instance_number(objMegaman) <= 1
 	x = global.checkpointX;
 	y = global.checkpointY;
 }
-
+mergeBlocks();
 global.xspeed = array_create(global.playersMax + 1, 0);
 global.yspeed = array_create(global.playersMax + 1, 0);
 //Initialize the camera

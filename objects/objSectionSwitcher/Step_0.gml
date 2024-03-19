@@ -126,35 +126,107 @@ if instance_number(objMegaman) == 2
 			        else if dir == "down"
 			        {
 			            global.viewY += screenSpeedVert;
-			            y += playerSpeedVert;
-			            objMegaman.y += playerSpeedVert;
+            
+			            if door == false
+			            {
+			                y += playerSpeedVert;
+			                objMegaman.y += playerSpeedVert;
+			            }
+			            else
+			            {
+			                y += playerSpeedVertDoor;
+			                objMegaman.y += playerSpeedVertDoor;
+			            }            
             
 			            if global.viewY >= objMegaman.sectionTop
 			            {
 			                global.viewY = objMegaman.sectionTop;
-			                global.frozen = false;
-			                objMegaman.visible = true;
-			                instance_destroy();
-			                with megaman playerDeactivateObjects();
-			                instance_activate_object(prtEnemy); //To not make it invisible for 1 frame after re-entering the section
+                
+			                if door == false
+			                {
+			                    global.frozen = false;
+			                    objMegaman.visible = true;
+			                    instance_destroy();
+			                    with megaman playerDeactivateObjects();
+			                    instance_activate_object(prtEnemy); //To not make it invisible for 1 frame after re-entering the section
+			                }
+			                else
+			                {
+			                    var bossdr;
+			                    bossdr = instance_place(x, megaman.sectionTop, objBossDoorH);
+			                    if bossdr >= 0
+			                    {
+			                        bossdr.opening = false;
+			                        bossdr.closing = true;
+			                        image_speed = 0;
+			                        playSFX(sfxDoor);
+                        
+			                        playerSpeedVertDoor = 0;
+			                    }
+			                    else
+			                    {
+			                        global.frozen = false;
+			                        objMegaman.visible = true;
+			                        instance_destroy();
+			                        with megaman playerDeactivateObjects();
+			                    }
+			                }                
 			            }
+            
+                        
 			        }
         
 			        //Up
 			        else if dir == "up"
 			        {
-			            global.viewY -= screenSpeedVert;
-			            y -= playerSpeedVert;
-			            objMegaman.y -= playerSpeedVert;
+			            global.viewY -= screenSpeedVert;            
             
-			            if global.viewY <= objMegaman.sectionBottom - global.viewHeight
+			            if door == false
 			            {
-			                global.viewY = objMegaman.sectionBottom - global.viewHeight;
-			                global.frozen = false;
-			                objMegaman.visible = true;
-			                instance_destroy();
-			                with megaman playerDeactivateObjects();
+			                y -= playerSpeedVert;
+			                objMegaman.y -= playerSpeedVert;
 			            }
+			            else
+			            {
+			                y -= playerSpeedVertDoor;
+			                objMegaman.y -= playerSpeedVertDoor;
+			            }            
+
+			            if global.viewY <= objMegaman.sectionBottom - view_hview[0]
+			            {
+			                global.viewY = objMegaman.sectionBottom - view_hview[0];
+
+			                if door == false
+			                {
+			                    global.frozen = false;
+			                    objMegaman.visible = true;
+			                    instance_destroy();
+			                    with megaman playerDeactivateObjects();
+			                }
+			                else
+			                {
+			                    var bossdr;
+			                    bossdr = instance_place(x, megaman.sectionBottom, objBossDoorH);
+			                    if bossdr >= 0
+			                    {
+			                        bossdr.opening = false;
+			                        bossdr.closing = true;
+			                        image_speed = 0;
+			                        playSFX(sfxDoor);
+                        
+			                        playerSpeedVertDoor = 0;
+			                    }
+			                    else
+			                    {
+			                        global.frozen = false;
+			                        objMegaman.visible = true;
+			                        instance_destroy();
+			                        with megaman playerDeactivateObjects();
+			                    }
+			                }                                        
+			            }
+            
+            
 			        }
         
         

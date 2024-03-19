@@ -955,4 +955,6 @@ var useSpeed = 0;
 	{
 		if !isSlide mask_index = mskMegaman;
 	}
+
+	escapeWall();
 }

@@ -1,5 +1,5 @@
 //Hotfix for Mac users
-if os_macosx room_speed = 60;
+if os_type == os_macosx room_speed = 60;
 
 if instance_exists(objMegaman)
 {
