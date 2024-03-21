@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"bbox_get_xcenter_object",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"bbox_get_xcenter_object",
+  "parent":{
+    "name":"Drawing",
+    "path":"folders/Scripts/Drawing.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

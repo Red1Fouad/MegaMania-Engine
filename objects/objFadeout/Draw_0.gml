@@ -3,7 +3,7 @@ oldCol = draw_get_color();
 oldAlpha = draw_get_alpha();
 
 draw_set_color(c_black);
-draw_set_alpha(blackAlpha); // Assuming blackAlpha is properly defined
+draw_set_alpha(blackAlpha);
 
 // Ensure that global.viewX, global.viewY, global.viewWidth, and global.viewHeight are properly initialized
 var viewX = global.viewX;

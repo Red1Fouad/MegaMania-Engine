@@ -124,5 +124,5 @@ function playerCollision() {
 	    }
 	}
 
-
+	escapeWall();
 }

@@ -6,7 +6,6 @@ showCon = true;
 
 global.playersMax = 2;
 global.isMultiplayer = 1;
-global.PVP = 1;
 global.view = view_get_camera(camera_create_view(0, 0, 256, 240, 0, noone, 0, 0, 9999, 9999));
 global.viewX = 0;
 global.viewY = 0;

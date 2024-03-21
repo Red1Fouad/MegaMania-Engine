@@ -1,0 +1,1 @@
+instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);

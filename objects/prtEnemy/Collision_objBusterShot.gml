@@ -18,7 +18,7 @@ if reflectProjectiles == false && damageBuster != 0
         
         if healthpoints <= 0 && object_get_parent(object_index) != prtBoss
         {
-            instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);
+            event_user(1);
         }
     }
 }

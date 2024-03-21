@@ -70,6 +70,7 @@ slideTimer = 0;
 canHit = true;
 isHit = false;
 hitTimer = 0;
+climbShootXscale = 0;
 drawHitspark = false;
 invincibilityTimer = 0;
 isCharge = false;

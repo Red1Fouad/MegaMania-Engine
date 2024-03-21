@@ -20,7 +20,7 @@ if reflectProjectiles == false && damagePharaohShot != 0
                 
             if healthpoints <= 0 && object_get_parent(object_index) != prtBoss
             {
-                instance_create(sprite_get_xcenter(), sprite_get_ycenter(), objItemExplosion);
+                event_user(1);
             }
             
             //No ammo was taken in MM4, so I removed it from here as well
