@@ -32,10 +32,8 @@ if isMM == true
                 teleportY -= 7;
         }
         
-        draw_sprite_ext(sprMegamanTeleport, image_index, round(x), round(y+teleportY), image_xscale, image_yscale, image_angle, c_white, 1);
-        draw_sprite_ext(sprMegamanTeleportPrimary, image_index, round(x), round(y+teleportY), image_xscale, image_yscale, image_angle, global.primaryCol[playerID], 1);
-        draw_sprite_ext(sprMegamanTeleportSecondary, image_index, round(x), round(y+teleportY), image_xscale, image_yscale, image_angle, global.secondaryCol[playerID], 1);
-        draw_sprite_ext(sprMegamanTeleportOutline, image_index, round(x), round(y+teleportY), image_xscale, image_yscale, image_angle, global.outlineCol[playerID], 1);
+        //draw_sprite_ext(sprMegamanTeleport, image_index, round(x), round(y+teleportY), image_xscale, image_yscale, image_angle, c_white, 1);
+        drawSpriteColorSwap(sprMegamanTeleport, image_index, round(x), round(y+teleportY), primary_color, secondary_color, outline_color,global.primaryCol[playerID],global.secondaryCol[playerID], global.outlineCol[playerID]);
     }
 }
 

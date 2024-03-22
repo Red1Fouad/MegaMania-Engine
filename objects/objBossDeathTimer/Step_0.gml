@@ -58,7 +58,7 @@ if isMM == true && teleporting == false
         {
             if canInitJump == true && ground == true
             {
-                if global.weaponUnlocked[global.weapon[playerID].ID] == false //Only absorb the power if it's not already been unlocked
+                if global.weaponUnlocked[global.weapon[playerID]] == false //Only absorb the power if it's not already been unlocked
                 {
                     canInitJump = false;
                     

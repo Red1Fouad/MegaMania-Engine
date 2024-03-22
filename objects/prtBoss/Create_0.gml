@@ -1,3 +1,4 @@
+event_inherited()
 playerID = 1;
 startIntro = false;
 isIntro = false;

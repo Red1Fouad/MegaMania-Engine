@@ -1,6 +1,6 @@
 draw_set_halign(fa_center);
 
-draw_text(room_width / 2, 30, "GAMEPAD CONFIG");
+draw_text(room_width / 2, 30, "GAMEPAD CONFIG P1");
 
 var initial_y = 50;
 var vspace = 12;

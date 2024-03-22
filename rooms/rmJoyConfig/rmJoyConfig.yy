@@ -26,8 +26,8 @@
   ],
   "name":"rmJoyConfig",
   "parent":{
-    "name":"Main Menu",
-    "path":"folders/Rooms/Main Menu.yy",
+    "name":"Gamepad",
+    "path":"folders/Rooms/Main Menu/Gamepad.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

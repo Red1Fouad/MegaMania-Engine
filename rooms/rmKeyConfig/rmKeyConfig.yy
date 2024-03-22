@@ -26,8 +26,8 @@
   ],
   "name":"rmKeyConfig",
   "parent":{
-    "name":"Main Menu",
-    "path":"folders/Rooms/Main Menu.yy",
+    "name":"Keys",
+    "path":"folders/Rooms/Main Menu/Keys.yy",
   },
   "parentRoom":null,
   "physicsSettings":{

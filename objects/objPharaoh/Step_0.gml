@@ -304,6 +304,8 @@ if global.frozen == false
                 image_xscale = 1;
         }
     }
+	x += xspeed;
+	y += yspeed;
 }
 else
 {

@@ -13,7 +13,7 @@ if (char >= totalCharacters) char = 0;
 if (char < 0) char = totalCharacters - 1;
 
 // Select Player
-if (global.keyPausePressed || global.keyShootPressed || global.keyJumpPressed) {
+if (global.keyPausePressed || global.keyJumpPressed) {
     playSFX(sfxMenuSelect);
     global.playerName = getCharacterName(char); // Set global variable with selected character name
     var ID = instance_create(0, 0, objFadeout);

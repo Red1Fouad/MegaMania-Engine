@@ -176,9 +176,9 @@ if global.frozen == false
         cutter = 1
 	if (((xspeed > 0) && (!(place_meeting(((x + xspeed) + 2), y, objSolid)))) || ((xspeed < 0) && (!(place_meeting(((x + xspeed) - 2), y, objSolid)))))
 	{
-		x += ((xspeed))/2
+			x += xspeed;
 	}
-	y += ((yspeed))/2;
+	y += yspeed;
 }
 else
     image_speed = 0

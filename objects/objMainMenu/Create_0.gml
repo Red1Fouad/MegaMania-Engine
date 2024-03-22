@@ -28,8 +28,8 @@ if os_browser == browser_not_a_browser && os_type != os_android && os_type != os
 {
 	menu_actions = [
 	    rmPlayerSelect,         // "NEW GAME"
-	    rmKeyConfig,            // "KEY CONFIG"
-	    rmJoyConfig,            // "GAMEPAD CONFIG"
+	    rmKeyMenu,            // "KEY CONFIG"
+	    rmJoyMenu,            // "GAMEPAD CONFIG"
 	    rmDisclaimer            // "BACK"
 	];
 }

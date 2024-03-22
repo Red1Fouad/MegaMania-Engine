@@ -27,6 +27,40 @@ pauseKey = vk_space;
 weaponSwitchLeftKey = vk_numpad1;
 weaponSwitchRightKey = vk_numpad3;
 
+leftKey2 = ord("Q");
+rightKey2 = ord("D");
+upKey2 = ord("Z");
+downKey2 = ord("S");
+jumpKey2 = ord("J");
+shootKey2 = ord("U");
+slideKey2 = ord("V");
+pauseKey2 = vk_numpad8;
+weaponSwitchLeftKey2 = vk_numpad4;
+weaponSwitchRightKey2 = vk_numpad6;
+
+//Gamepad Buttons 
+leftButton = gp_padl;
+rightButton = gp_padr;
+upButton = gp_padu;
+downButton = gp_padd;
+jumpButton = gp_face1;
+shootButton = gp_face3;
+slideButton = gp_face2;
+pauseButton = gp_start;
+weaponSwitchLeftButton = gp_shoulderlb;
+weaponSwitchRightButton = gp_shoulderrb;
+
+leftButton2 = gp_padl;
+rightButton2 = gp_padr;
+upButton2 = gp_padu;
+downButton2 = gp_padd;
+jumpButton2 = gp_face1;
+shootButton2 = gp_face3;
+slideButton2 = gp_face2;
+pauseButton2 = gp_start;
+weaponSwitchLeftButton2 = gp_shoulderlb;
+weaponSwitchRightButton2 = gp_shoulderrb;
+
 // Mobile Inputs created on startup
 global.inputSize = [3, 4]; //change later?
 if (isTouchDevice()) {
@@ -46,28 +80,6 @@ if (isTouchDevice()) {
 	];
 }
 
-leftKey2 = ord("Q");
-rightKey2 = ord("D");
-upKey2 = ord("Z");
-downKey2 = ord("S");
-jumpKey2 = ord("J");
-shootKey2 = ord("U");
-slideKey2 = ord("V");
-pauseKey2 = vk_numpad8;
-weaponSwitchLeftKey2 = vk_numpad4;
-weaponSwitchRightKey2 = vk_numpad6;
-
-//Gamepad Buttons
-leftButton = gp_padl;
-rightButton = gp_padr;
-upButton = gp_padu;
-downButton = gp_padd;
-jumpButton = gp_face1;
-shootButton = gp_face3;
-slideButton = gp_face2;
-pauseButton = gp_start;
-weaponSwitchLeftButton = gp_shoulderlb;
-weaponSwitchRightButton = gp_shoulderrb;
 
 for (var i = 0; i <= 99; i++)
 {
@@ -108,6 +120,7 @@ if room == rmInit
     
     room_goto_next();
     global.eTanks = 1;
+	global.wTanks = 1;
     global.mTanks = 1;
     global._lives = 9;
        

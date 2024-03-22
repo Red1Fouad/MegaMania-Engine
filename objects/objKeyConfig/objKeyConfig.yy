@@ -10,8 +10,8 @@
   "name":"objKeyConfig",
   "overriddenProperties":[],
   "parent":{
-    "name":"MainMenu",
-    "path":"folders/Objects/Menu/MainMenu.yy",
+    "name":"Keys",
+    "path":"folders/Objects/Menu/MainMenu/Keys.yy",
   },
   "parentObjectId":null,
   "persistent":false,

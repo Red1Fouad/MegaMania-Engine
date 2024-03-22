@@ -10,8 +10,8 @@
   "name":"objJoyConfig",
   "overriddenProperties":[],
   "parent":{
-    "name":"MainMenu",
-    "path":"folders/Objects/Menu/MainMenu.yy",
+    "name":"Gamepad",
+    "path":"folders/Objects/Menu/MainMenu/Gamepad.yy",
   },
   "parentObjectId":null,
   "persistent":false,

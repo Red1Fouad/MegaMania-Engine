@@ -14,6 +14,6 @@ startTeleportTimer = 0;
 teleporting = false;
 teleportTimer = 0;
 teleportY = 0;
-
+playerSetColors();
 with objMegaman canPause = false;
 

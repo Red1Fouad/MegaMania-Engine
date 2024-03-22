@@ -1,6 +1,6 @@
 draw_set_halign(fa_center);
 
-draw_text(room_width / 2, 30, "KEY CONFIG");
+draw_text(room_width / 2, 30, "KEY CONFIG P1");
 
 var initial_y = 50;
 var vspace = 12;

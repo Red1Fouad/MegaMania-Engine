@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"getTarget",
   "parent":{
-    "name":"Boss",
-    "path":"folders/Scripts/Boss.yy",
+    "name":"Enemies",
+    "path":"folders/Scripts/Enemies.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -36,7 +36,7 @@ if !waiting {
                 playSFX(sfxMenuSelect);            
                 var ID = instance_create(0, 0, objFadeout);
                 ID.type = "room";
-                ID.myRoom = rmMainMenu;
+                ID.myRoom = rmJoyMenu;
                 break;
             default:
                 playSFX(sfxMenuSelect);

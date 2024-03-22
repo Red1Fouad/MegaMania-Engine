@@ -3,7 +3,7 @@
 function escapeWall(){
 	/// escapeWall(): avoids getting stuck into walls
 
-	amount = 1;
+	var amount = 1;
 	while !place_free(x, y) {
 	    if place_free(x-amount, y) {
 	        show_debug_message(object_get_name(object_index) + " Stuck: Move "+string(amount)+" pixel to the left");
@@ -25,7 +25,6 @@ function escapeWall(){
 	        amount++;
 	    }
 	}
-
 
 	if debug_mode && position_meeting(x, y+5, objSolid) {
 	    //show_error("Stuck!", false);

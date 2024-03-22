@@ -87,10 +87,19 @@ if global.frozen == false
     }
     
     prevHealthPoints = healthpoints;
-    
-    
-    x += xspeed;
-    y += yspeed;
+	
+	if isFight
+    {
+        if (instance_exists(objMegaman) && (!instance_exists(objBossDeathTimer)))
+        {
+            if ((x < objMegaman.sectionLeft))
+                x = objMegaman.sectionLeft
+            else if ((x > objMegaman.sectionRight))
+                x = objMegaman.sectionRight
+            if ((y < objMegaman.sectionTop))
+                y = objMegaman.sectionTop
+        }
+    }
 }
 else
 {
