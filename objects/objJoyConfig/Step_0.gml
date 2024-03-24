@@ -1,5 +1,5 @@
 if (instance_exists(objFadeout)) exit;
-
+deviceID = global.deviceID[playerID-1];
 key[0] = objGlobalControl.leftButton;
 key[1] = objGlobalControl.rightButton;
 key[2] = objGlobalControl.upButton;
@@ -12,6 +12,7 @@ key[8] = objGlobalControl.pauseButton;
 key[9] = objGlobalControl.slideButton;
 
 if !waiting {
+	countdown = 10000;
     if global.keyUpPressed {
         selected--;
         if selected < 0 {
@@ -45,6 +46,11 @@ if !waiting {
     }
 }
 else {  //Set button
+	countdown -= 50;
+    if (countdown <= 0) {
+		countdown = 10000;
+        waiting = false;
+    }
     var button = gamepad_button_check_pressed_all();
     if button != false {
         switch selected {

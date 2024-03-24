@@ -12,6 +12,7 @@ key[8] = objGlobalControl.pauseKey2;
 key[9] = objGlobalControl.slideKey2;
 
 if !waiting {
+	countdown = 10000;
     if global.keyUpPressed {
         selected--;
         if selected < 0 {
@@ -46,6 +47,11 @@ if !waiting {
     }
 }
 else {  //Set key
+	countdown -= 50;
+    if (countdown <= 0) {
+		countdown = 10000;
+        waiting = false;
+    }
     if keyboard_check_pressed(vk_anykey) and keyboard_lastkey != vk_escape {
         switch selected {
             case 0: objGlobalControl.leftKey2 = keyboard_lastkey; break;

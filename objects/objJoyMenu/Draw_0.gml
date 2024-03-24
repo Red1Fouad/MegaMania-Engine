@@ -10,6 +10,12 @@ draw_set_halign(fa_left);
 for (var i = 0; i < num_menu_items; i++) {
     draw_text(left, i * vspace + initial_y, menu[| i]);
 }
+if !global.gamepadIsAttachedP2
+{
+	draw_set_color(c_gray)
+	draw_text(left, 60 + 16, "PLAYER 2")
+	draw_set_color(c_white)
+}
 
 // Selection arrow
 draw_sprite(sprPassArrow, 0, left - 10, selected * vspace + initial_y + 3);

@@ -1,3 +1,5 @@
+playerID = 1;
+countdown = 10000;
 draw_set_color(c_white);
 draw_set_font(global.MM3font);
 draw_set_valign(fa_top);

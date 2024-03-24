@@ -16,7 +16,7 @@ for (var i = 0; i < num_menu_items; i++) {
     else {
         draw_text(left, i * vspace + initial_y, menu[i]);
         if waiting and i == selected {
-            draw_text(room_width / 2 + 20, i * vspace + initial_y, "PRESS");
+            draw_text(room_width / 2 + 20, i * vspace + initial_y, "PRESS..." + string(ceil(countdown/1000)));
         }
         else {
             draw_text(room_width / 2 + 20, i * vspace + initial_y, string_upper(key_to_string(key[i])));

@@ -14,8 +14,22 @@ if _move != 0 {
 
 // Menu selection
 if global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed {
-    playSFX(sfxMenuSelect);
-    var ID = instance_create(0, 0, objFadeout);
-    ID.type = "room";
-    ID.myRoom = menu_actions[selected];
+	if global.gamepadIsAttachedP2
+	{
+		playSFX(sfxMenuSelect);
+	    var ID = instance_create(0, 0, objFadeout);
+	    ID.type = "room";
+	    ID.myRoom = menu_actions[selected];
+	}
+	else if !global.gamepadIsAttachedP2
+	{
+		if selected == 1 playSFX(sfxError);
+		else 
+		{
+			playSFX(sfxMenuSelect);
+		    var ID = instance_create(0, 0, objFadeout);
+		    ID.type = "room";
+		    ID.myRoom = menu_actions[selected];
+		}
+	}
 }
