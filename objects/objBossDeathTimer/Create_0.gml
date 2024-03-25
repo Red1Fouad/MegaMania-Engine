@@ -14,6 +14,7 @@ startTeleportTimer = 0;
 teleporting = false;
 teleportTimer = 0;
 teleportY = 0;
-playerSetColors();
+character = global.playerName;
+playerSetColorsExt();
 with objMegaman canPause = false;
 

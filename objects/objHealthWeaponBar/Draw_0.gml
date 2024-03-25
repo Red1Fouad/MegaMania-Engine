@@ -21,7 +21,7 @@ for(m = 1; m <= instance_number(objMegaman); m += 1)
 	    }
 	}
 	
-	if m > 1 || global.isMultiplayer
+	if (m > 1 || global.isMultiplayer) && global.player2Active == true
 	{
 		//Health 2
 		draw_sprite(sprHealthbarBackground, 0, global.viewX+7+8+5+20, global.viewY+17);

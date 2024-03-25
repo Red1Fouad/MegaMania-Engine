@@ -1,0 +1,1 @@
+playMusicVolumeLoopPoint(bgmWind, 1, 332260/4186105, 4184356/4186105);

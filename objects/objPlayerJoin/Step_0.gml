@@ -17,6 +17,8 @@ if !global.frozen
 		instance_destroy();
 	}
 }
-
-x = objMegaman.x;
-y = objMegaman.y;
+if instance_exists(objMegaman)
+{
+	x = objMegaman.x;
+	y = objMegaman.y;
+}

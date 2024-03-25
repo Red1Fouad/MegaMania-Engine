@@ -1,5 +1,18 @@
-x = objMegaman;
-y = objMegaman;
+if instance_exists(objMegaman)
+{
+	x = objMegaman.x;
+	y = objMegaman.y;
+}
+
+var canJoin = false;
+if instance_exists(objMegaman) && objMegaman.teleporting == false && objMegaman.showReady == false && instance_number(objMegaman) == 1 && !(global._lives <= 0) 
+{
+	canJoin = true
+}
+else
+{
+	canJoin = false
+}
 
 if !global.frozen && !instance_exists(objSectionSwitcher)
 {
@@ -23,7 +36,8 @@ if !global.frozen && !instance_exists(objSectionSwitcher)
 	global.playerName2 = getCharacterName(global.selectedCharacterIndex);
 
 	// Create player 2 object when character is selected
-	if (global.keyPause2Pressed) {
+	if (global.keyPause2Pressed) && canJoin && instance_exists(objMegaman) {
+		global.player2Active = true;
 	    var p2 = instance_create(objMegaman.x, objMegaman.y, objMegaman)
 		p2.playerID = 2;
 		p2.character = global.playerName2;

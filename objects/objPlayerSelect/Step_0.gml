@@ -18,7 +18,7 @@ if (global.keyPausePressed || global.keyJumpPressed) {
     global.playerName = getCharacterName(char); // Set global variable with selected character name
     var ID = instance_create(0, 0, objFadeout);
     ID.type = "room";
-    ID.myRoom = rmTest;         
+    ID.myRoom = rmWindman;         
 }
 
 // Go Back

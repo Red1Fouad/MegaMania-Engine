@@ -1,5 +1,5 @@
 if !audio_is_playing(mscTitleScreen)
-	playMusicVolumeLoopPoint(mscTitleScreen, 0.6, 1135713/3960623 , 1);
+	playMusicVolumeLoopPoint(mscTitleScreen, 1, 1135713/3960623 , 1);
 
 drawText = false;
 drawTextTimer = 0;

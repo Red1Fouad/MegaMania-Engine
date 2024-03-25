@@ -8,7 +8,7 @@ draw_set_halign(fa_center);
 
 // Play background music if not already playing
 if !audio_is_playing(bgmMainMenu) {
-    playMusicVolumeLoopPoint(bgmMainMenu, 0.6, 0, 1);
+    playMusicVolumeLoopPoint(bgmMainMenu, 1, 0, 1);
 }
 
 // Menu items

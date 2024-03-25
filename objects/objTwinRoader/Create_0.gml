@@ -1,0 +1,21 @@
+event_inherited()
+respawn = 1
+healthpointsStart = 3
+healthpoints = healthpointsStart
+contactDamage = 3
+reflectProjectiles = 0
+reflectProjectilesRight = 0
+reflectProjectilesLeft = 0
+col = 0
+spd = 1.5
+acc = 0.10000000000000001
+canFacePlayer = 1
+turning = 0
+turnTimer = 0
+turnTimerMax = 16
+animTimer = 0
+image_speed = 0
+image_index = 0
+xspeed = 0
+yspeed = 0
+grav = 0.25
