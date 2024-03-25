@@ -108,7 +108,7 @@ bassBusterTimer = 0;
 groundFrames = 0;
 didDoubleJump = 0;
 justClimbed = 0;
-
+affectedByFan = 0;
 
 global.outlineCol[playerID] = c_black;
 

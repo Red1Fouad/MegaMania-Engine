@@ -9,6 +9,7 @@ function deactivateUnimportantObjects() {
 	instance_activate_object(objGlobalControl);
 	instance_activate_object(objControllerControl);
 	instance_activate_object(objHealthWeaponBar);
+	instance_activate_object(objPlayer2Select);
 
 	instance_activate_object(objBossDoor);
 	instance_activate_object(objBossDoorH);

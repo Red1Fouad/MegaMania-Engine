@@ -72,18 +72,18 @@ else
 //Debug
 if !instance_exists(objSectionSwitcher) && !climbing && !isSlide && !global.frozen
 {
-	if playerID == 1 && keyboard_check_pressed(vk_f9) && teleporting == false && showReady == false && instance_number(objMegaman) == 1 && !(global._lives <= 0)
+	if playerID == 1 && (keyboard_check_pressed(vk_f9) || global.keySelectPressed) && teleporting == false && showReady == false && instance_number(objMegaman) == 1 && !(global._lives <= 0)
 	{
 		if global._health[2] <= 0 {global._health[1] = global._health[1]/2; global._health[2] = 28;}
-		var p2 = instance_create(x + 10, y, objMegaman)
+		var p2 = instance_create(x, y, objMegaman)
 		p2.character = "Protoman";
 		p2.playerID = 2;
 	}
 
-	if playerID == 2 && keyboard_check_pressed(vk_f10) && teleporting == false && showReady == false && instance_number(objMegaman) == 1 && !(global._lives <= 0)
+	if playerID == 2 && (keyboard_check_pressed(vk_f10) || global.keySelectPressed2) && teleporting == false && showReady == false && instance_number(objMegaman) == 1 && !(global._lives <= 0)
 	{
 		if global._health[1] <= 0 {global._health[2] = global._health[2]/2; global._health[1] = 28;}
-		var p1 = instance_create(x + 10, y, objMegaman)
+		var p1 = instance_create(x, y, objMegaman)
 		p1.playerID = 1;
 	}
 

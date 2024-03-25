@@ -18,5 +18,8 @@ if instance_number(objMegaman) <= 1
 	
 	if !instance_exists(objMultiplayerBorderR)
 	    instance_create(x, y, objMultiplayerBorderR); 
+	
+	if !instance_exists(objPlayerJoin)
+	    instance_create(x, y, objPlayerJoin);
 }
 event_user(0);

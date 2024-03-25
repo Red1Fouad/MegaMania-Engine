@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"insideViewBox",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"insideViewBox",
+  "parent":{
+    "name":"Views",
+    "path":"folders/Scripts/Views.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

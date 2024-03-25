@@ -6,8 +6,8 @@ if instance_number(objMegaman) == 2
 		if (megaman.playerID == playerID) {
 			character = megaman.character;
 			primary_color = megaman.primary_color;
-			secondary_color = megaman.primary_color;
-			outline_color = megaman.primary_color;
+			secondary_color = megaman.secondary_color;
+			outline_color = megaman.outline_color;
 			with objMegaman visible = false;
 		    sprite_index = megaman.sprite_index;
 		    image_index = megaman.image_index;
@@ -253,8 +253,8 @@ else
 {
 	character = objMegaman.character;
 	primary_color = objMegaman.primary_color;
-	secondary_color = objMegaman.primary_color;
-	outline_color = objMegaman.primary_color;
+	secondary_color = objMegaman.secondary_color;
+	outline_color = objMegaman.outline_color;
 	with objMegaman visible = false;
 	sprite_index = objMegaman.sprite_index;
 	image_index = objMegaman.image_index;

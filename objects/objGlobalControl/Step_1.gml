@@ -20,6 +20,7 @@ global.keyPausePressed = keyboard_check_pressed(pauseKey) || gamepad_button_chec
 global.keyWeaponSwitchLeftPressed = keyboard_check_pressed(weaponSwitchLeftKey) || gamepad_button_check_pressed(global.deviceID[0], weaponSwitchLeftButton);
 global.keyWeaponSwitchRightPressed = keyboard_check_pressed(weaponSwitchRightKey) || gamepad_button_check_pressed(global.deviceID[0], weaponSwitchRightButton);
 global.keySlidePressed = keyboard_check_pressed(slideKey) || gamepad_button_check_pressed(global.deviceID[0], slideButton);
+global.keySelectPressed = gamepad_button_check_pressed(global.deviceID[0], gp_select);
 
 global.keyLeftReleased = keyboard_check_released(leftKey) || gamepad_button_check_released(global.deviceID[0], leftButton);
 global.keyRightReleased = keyboard_check_released(rightKey || gamepad_button_check_released(global.deviceID[0], rightButton));
@@ -55,6 +56,7 @@ global.keyPause2Pressed = keyboard_check_pressed(pauseKey2) || gamepad_button_ch
 global.keyWeaponSwitchLeft2Pressed = keyboard_check_pressed(weaponSwitchLeftKey2) || gamepad_button_check_pressed(global.deviceID[1], weaponSwitchLeftButton2);
 global.keyWeaponSwitchRight2Pressed = keyboard_check_pressed(weaponSwitchRightKey2) || gamepad_button_check_pressed(global.deviceID[1], weaponSwitchRightButton2);
 global.keySlide2Pressed = keyboard_check_pressed(slideKey2) || gamepad_button_check_pressed(global.deviceID[1], slideButton2);
+global.keySelectPressed2 = gamepad_button_check_pressed(global.deviceID[1], gp_select);
 
 global.keyLeft2Released = keyboard_check_released(leftKey2) || gamepad_button_check_released(global.deviceID[1], leftButton2);
 global.keyRight2Released = keyboard_check_released(rightKey2 || gamepad_button_check_released(global.deviceID[1], rightButton2));

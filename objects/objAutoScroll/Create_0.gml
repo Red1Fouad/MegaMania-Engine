@@ -4,7 +4,3 @@ started = false;
 border = -1;
 border2 = -1;
 
-if cfgDebug || debug_mode {
-    visible = true;
-}
-
