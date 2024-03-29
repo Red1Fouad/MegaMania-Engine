@@ -18,8 +18,18 @@ if instance_number(objMegaman) <= 1
 	
 	if !instance_exists(objMultiplayerBorderR)
 	    instance_create(x, y, objMultiplayerBorderR); 
+		
+	if global.player2Active == false
+	{
+		if !instance_exists(objPlayerJoin)
+		    instance_create(x, y, objPlayerJoin);
+	}
 	
-	if !instance_exists(objPlayerJoin)
-	    instance_create(x, y, objPlayerJoin);
+	if global.player2Active == true
+	{
+		var p2 = instance_create(x, y, objMegaman)
+		p2.character = global.playerName2;
+		p2.playerID = 2;
+	}
 }
 event_user(0);

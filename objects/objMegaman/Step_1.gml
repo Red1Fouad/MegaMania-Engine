@@ -76,7 +76,7 @@ if !instance_exists(objSectionSwitcher) && !climbing && !isSlide && !global.froz
 	{
 		if global._health[2] <= 0 {global._health[1] = global._health[1]/2; global._health[2] = 28;}
 		var p2 = instance_create(x, y, objMegaman)
-		p2.character = "Protoman";
+		p2.character = global.playerName2;
 		p2.playerID = 2;
 	}
 

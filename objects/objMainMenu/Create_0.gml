@@ -6,6 +6,8 @@ draw_set_font(global.MM3font);
 draw_set_valign(fa_top);
 draw_set_halign(fa_center);
 
+global.player2Active = false;
+
 // Play background music if not already playing
 if !audio_is_playing(bgmMainMenu) {
     playMusicVolumeLoopPoint(bgmMainMenu, 1, 0, 1);

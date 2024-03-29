@@ -1,4 +1,4 @@
-global._lives -= 1;
+global._lives -= 0;
 if instance_number(objMegaman) <= 0 //|| instance_number(objMegaman) <= 1 && objMegaman.playerID != 1
 {
 	var ID;

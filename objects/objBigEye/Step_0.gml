@@ -79,9 +79,6 @@ if global.frozen == false && dead == false
         }
     }
     
-    x += xspeed;
-    y += yspeed;
-    
     prevGround = ground;
 }
 else
