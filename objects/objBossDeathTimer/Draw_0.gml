@@ -33,7 +33,7 @@ if isMM == true
         }
         
         //draw_sprite_ext(sprMegamanTeleport, image_index, round(x), round(y+teleportY), image_xscale, image_yscale, image_angle, c_white, 1);
-        drawSpriteColorSwap(sprMegamanTeleport, image_index, round(x), round(y+teleportY), primary_color, secondary_color, outline_color,global.primaryCol[playerID],global.secondaryCol[playerID], global.outlineCol[playerID]);
+        drawSpriteColorSwap(asset_get_index("spr"+character+"Teleport"), image_index, round(x), round(y+teleportY), primary_color, secondary_color, outline_color,global.primaryCol[playerID],global.secondaryCol[playerID], global.outlineCol[playerID]);
     }
 }
 

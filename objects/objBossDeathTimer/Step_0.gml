@@ -44,9 +44,9 @@ if isMM == true && teleporting == false
             }
             
             if ground == true
-                sprite_index = sprMegamanWalk;
+                sprite_index = asset_get_index("spr"+character+"Walk");
             else
-                sprite_index = sprMegamanJump;
+                sprite_index = asset_get_index("spr"+character+"Jump");
                 
                 
             if prevGround == false && ground == true
@@ -63,7 +63,7 @@ if isMM == true && teleporting == false
                     canInitJump = false;
                     
                     x = destX;
-                    sprite_index = sprMegamanJump;
+                    sprite_index = asset_get_index("spr"+character+"Jump");
                     yspeed = -8;
                     xspeed = 0;
                 }
@@ -74,7 +74,7 @@ if isMM == true && teleporting == false
                     teleporting = true;
                     alarm[2] = 60;
                     playSFX(sfxTeleportOut);
-                    sprite_index = sprMegamanTeleport;
+                    sprite_index = asset_get_index("spr"+character+"Teleport");;
                 }
             }
             
@@ -122,7 +122,7 @@ if isMM == true && teleporting == false
                 
                 if ground == true
                 {
-                    sprite_index = sprMegamanStand;
+                    sprite_index = asset_get_index("spr"+character+"Stand");
                     image_speed = 0;
                     image_index = 0;
                     
@@ -134,7 +134,7 @@ if isMM == true && teleporting == false
                         teleporting = true;
                         alarm[2] = 60;
                         playSFX(sfxTeleportOut);
-                        sprite_index = sprMegamanTeleport;
+                        sprite_index = asset_get_index("spr"+character+"Teleport");
                     }
                 }
                 

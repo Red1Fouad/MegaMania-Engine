@@ -64,3 +64,5 @@ if !global.frozen and !dead {
     }
     y += yspeed;
 }
+
+if !canHit hitByBassBuster = 1;

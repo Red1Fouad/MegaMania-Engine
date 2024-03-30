@@ -1,5 +1,5 @@
 event_inherited()
-neverDespawn = 0
+neverDespawn = 1;
 canStep = 0
 alarm[0] = 1
 phase = 0

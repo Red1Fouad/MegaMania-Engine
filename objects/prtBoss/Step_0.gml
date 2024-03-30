@@ -47,7 +47,7 @@ if global.frozen == false
         {
             canHit = false;
             alarm[9] = 1;
-            alarm[10] = 45; //Being able to get hit again
+            alarm[10] = 45/hitByBassBuster; //Being able to get hit again
             drawBoss = true;
             drawHitSpark = false;
             

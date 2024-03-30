@@ -5,6 +5,8 @@ canHit = true;
 
 respawn = true; //Should we respawn after leaving the screen and entering it again?
 
+hitByBassBuster = 1;
+
 damageBuster = 1;
 damageBusterCharged = 3;
 

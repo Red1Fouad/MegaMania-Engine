@@ -154,7 +154,6 @@
   "IncludedFiles":[
     {"$GMIncludedFile":"","%Name":"boomer.nsf","CopyToMask":-1,"filePath":"datafiles","name":"boomer.nsf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"test.nsf","CopyToMask":-1,"filePath":"datafiles","name":"test.nsf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
-    {"$GMIncludedFile":"","%Name":"test.nsf","CopyToMask":-1,"filePath":"datafiles","name":"test.nsf","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],

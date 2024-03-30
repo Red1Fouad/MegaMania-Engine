@@ -31,9 +31,9 @@ playerCameraInit();
 //Physics variables
 grav = 0.25; //The player's gravity
 gravWater = 0.38 * grav; //The player's gravity in water
-jumpSpeed = 4.75 + grav*2;  //Dunno why grav needs to be multiplied by 2, but MM jumps as high as in MM5 when doing so
+jumpSpeed = 4.8 + grav*2;  //Dunno why grav needs to be multiplied by 2, but MM jumps as high as in MM5 when doing so
 jumpSpeedWater = 4.85 + grav*2;
-walkSpeed = 1.3; //1.296875;
+walkSpeed = 1.375; //MM9 and MM10 walk speed;
 maxVspeed = 7;
 stepSpeed = 1/7;
 stepFrames = 7;

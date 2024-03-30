@@ -6,6 +6,7 @@ if reflectProjectiles == false && damageBuster != 0
     {
         if canHit == true
         {
+			hitByBassBuster = 2;
             healthpoints -= damageBuster/2;
             visible = false;
         }
