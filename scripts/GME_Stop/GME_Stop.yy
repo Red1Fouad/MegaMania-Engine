@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"GME_Stop",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GME_Stop",
+  "parent":{
+    "name":"GME",
+    "path":"folders/Scripts/GME.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

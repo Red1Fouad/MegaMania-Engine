@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"GME_GetTrackLength",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GME_GetTrackLength",
+  "parent":{
+    "name":"GME",
+    "path":"folders/Scripts/GME.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

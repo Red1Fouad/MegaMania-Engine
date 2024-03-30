@@ -6,8 +6,7 @@ function playMusicNoLoopVolume(musicAsset, volume)
 {
 	//Example: playMusicNoLoopVolume(mscBeta, 0.6)
 
-	if global.msc >= 0
-		audio_stop_sound(global.msc);
+	stopMusic();
 
 	global.msc = audio_play_sound(musicAsset, 100, false, volume);
 }

@@ -7,6 +7,7 @@ function deactivateUnimportantObjects() {
 	//Add more important objects as they are added
 	instance_activate_object(objMegaman);
 	instance_activate_object(objGlobalControl);
+	instance_activate_object(obj_gme);
 	instance_activate_object(objControllerControl);
 	instance_activate_object(objHealthWeaponBar);
 	instance_activate_object(objPlayer2Select);
