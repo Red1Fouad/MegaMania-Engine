@@ -9,7 +9,7 @@
   "bitRate":128,
   "compression":0,
   "conversionMode":0,
-  "duration":0.0,
+  "duration":1.195828,
   "name":"sfxBuster",
   "parent":{
     "name":"Shooting",

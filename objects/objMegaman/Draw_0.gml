@@ -66,7 +66,7 @@ else if teleporting == true
         teleportY += 7;
     }
 }
-else if showReady == true && playerID == 1
+else if showReady == true && (playerID == 1 && global.firstTimeLevel)
 {
     //Draw the READY text
     readyTimer += 1;

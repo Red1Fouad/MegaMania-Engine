@@ -281,6 +281,22 @@ else
 	                    global.ammo[global.currentWeapon[playerID]][playerID] = 0;
 	            }
 	        break;
+			
+			case hornetchaser:
+	            if instance_multiplayer_check(objHornetChaser,3)
+	            {
+	                attackID = instance_create(box+image_xscale*4, yy, objHornetChaser);
+					attackID.megamanID = id;
+					attackID.playerID = playerID;
+	                playSFX(sfxHornetChaser);
+	                isShoot = true;
+	                shootTimer = 0;
+                
+	                global.ammo[global.currentWeapon[playerID]][playerID] -= global.weaponAmmo[global.weaponSlot[global.currentWeapon[playerID]]];
+	                if global.ammo[global.currentWeapon[playerID]][playerID] <= 0
+	                    global.ammo[global.currentWeapon[playerID]][playerID] = 0;
+	            }
+	        break;
         
 	        case windstorm:
 	            if instance_multiplayer_check(objWindStorm, 3)

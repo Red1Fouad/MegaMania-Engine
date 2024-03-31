@@ -8,8 +8,7 @@ key[4] = objGlobalControl.jumpButton2;
 key[5] = objGlobalControl.shootButton2;
 key[6] = objGlobalControl.weaponSwitchLeftButton2;
 key[7] = objGlobalControl.weaponSwitchRightButton2;
-key[8] = objGlobalControl.pauseButton2;
-key[9] = objGlobalControl.slideButton2;
+key[8] = objGlobalControl.slideButton2;
 
 if !waiting {
 	countdown = 10000;
@@ -30,7 +29,7 @@ if !waiting {
     else if global.keyPausePressed || global.keyJumpPressed || global.keyShootPressed || global.keyPause2Pressed || global.keyJump2Pressed || global.keyShoot2Pressed {
         switch menu[selected] {
             case "RESET":
-                reset_buttons();
+                reset_keys();
                 save_configs();
                 break;
             case "BACK":
@@ -62,8 +61,7 @@ else {  //Set button
             case 5: objGlobalControl.shootButton2 = button; break;
             case 6: objGlobalControl.weaponSwitchLeftButton2 = button; break;
             case 7: objGlobalControl.weaponSwitchRightButton2 = button; break;
-            case 8: objGlobalControl.pauseButton2 = button; break;
-            case 9: objGlobalControl.slideButton2 = button; break;
+            case 8: objGlobalControl.slideButton2 = button; break;
         }
         waiting = false;
         save_configs();

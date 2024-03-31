@@ -2,6 +2,7 @@ if reflectProjectiles == false && damagePharaohShot != 0
 && !(reflectProjectilesLeft == true && sprite_get_xcenter_object(other.id) < sprite_get_xcenter())
 && !(reflectProjectilesRight == true && sprite_get_xcenter_object(other.id) > sprite_get_xcenter())
 {
+	playerID = other.playerID;
     if dead == false
     {
         if canHit == true

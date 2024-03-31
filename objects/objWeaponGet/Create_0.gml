@@ -9,7 +9,7 @@ text2Alpha = 0;
 
 global.checkpoint = false;
 
-global.weaponUnlocked[global.weapon[playerID].ID] = true; //Unlocks the special weapon of the RM
+global.weaponUnlocked[global.weaponID] = true; //Unlocks the special weapon of the RM
 global.bossDefeated[global.bossID] = true; //For the stage select screen
 
 phase = 0; //0 = preparing for moving up; 1 = moving up; 2 = de-teleporting; 3 = waiting; 4 = moving right; 5 = waiting for text;

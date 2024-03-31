@@ -119,7 +119,6 @@
     {"name":"inst_2A787267","path":"rooms/rmWindman/rmWindman.yy",},
     {"name":"inst_7B41D46","path":"rooms/rmWindman/rmWindman.yy",},
     {"name":"inst_3C9A8583","path":"rooms/rmWindman/rmWindman.yy",},
-    {"name":"inst_49A57B51","path":"rooms/rmWindman/rmWindman.yy",},
     {"name":"inst_72D5081B","path":"rooms/rmWindman/rmWindman.yy",},
     {"name":"inst_4D4D6FA5","path":"rooms/rmWindman/rmWindman.yy",},
     {"name":"inst_3C2DD9B0","path":"rooms/rmWindman/rmWindman.yy",},
@@ -276,6 +275,7 @@
     {"name":"inst_5659D58B","path":"rooms/rmWindman/rmWindman.yy",},
     {"name":"inst_7DB4E82D","path":"rooms/rmWindman/rmWindman.yy",},
     {"name":"inst_46F6214C","path":"rooms/rmWindman/rmWindman.yy",},
+    {"name":"inst_7894455","path":"rooms/rmWindman/rmWindman.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -284,7 +284,7 @@
         {"$GMRInstance":"","%Name":"inst_6E8AE9C0","colour":4294967295,"frozen":false,"hasCreationCode":true,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_6E8AE9C0","objectId":{"name":"objBossControl","path":"objects/objBossControl/objBossControl.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3088.0,"y":240.0,},
       ],"layers":[],"name":"Boss","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Megaman","depth":100,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"","%Name":"inst_49A57B51","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_49A57B51","objectId":{"name":"objMegaman","path":"objects/objMegaman/objMegaman.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":128.0,"y":1600.0,},
+        {"$GMRInstance":"","%Name":"inst_7894455","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_7894455","objectId":{"name":"objMegaman","path":"objects/objMegaman/objMegaman.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3024.0,"y":384.0,},
       ],"layers":[],"name":"Megaman","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Enemies","depth":200,"effectEnabled":true,"effectType":null,"gridX":8,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_33AC06FA","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_33AC06FA","objectId":{"name":"objColton","path":"objects/objColton/objColton.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":400.0,"y":1584.0,},

@@ -18,7 +18,7 @@ if (global.keyPausePressed || global.keyJumpPressed) {
     global.playerName = getCharacterName(char); // Set global variable with selected character name
     var ID = instance_create(0, 0, objFadeout);
     ID.type = "room";
-    ID.myRoom = rmWindman;         
+    ID.myRoom = global.targetRoom;         
 }
 
 // Go Back
@@ -26,5 +26,5 @@ if (global.keySlidePressed) {
     playSFX(sfxMenuSelect);
     var ID = instance_create(0, 0, objFadeout);
     ID.type = "room";
-    ID.myRoom = rmMainMenu;         
+    ID.myRoom = rmLevelSelect;         
 }

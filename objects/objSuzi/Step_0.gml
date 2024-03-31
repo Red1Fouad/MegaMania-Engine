@@ -35,9 +35,6 @@ if global.frozen == false && dead == false
             image_index = 1; //Eye half-open
             startDir = -startDir;   //Change the direction
         }
-        
-        x += xspeed;
-        y += yspeed;
     }
 }
 else

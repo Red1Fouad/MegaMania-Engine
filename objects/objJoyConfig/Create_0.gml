@@ -20,7 +20,6 @@ menu[4] = "JUMP";
 menu[5] = "SHOOT";
 menu[6] = "PREV WPN";
 menu[7] = "NEXT WPN";
-menu[8] = "PAUSE";
 
 key[0] = objGlobalControl.leftButton;
 key[1] = objGlobalControl.rightButton;
@@ -30,9 +29,8 @@ key[4] = objGlobalControl.jumpButton;
 key[5] = objGlobalControl.shootButton;
 key[6] = objGlobalControl.weaponSwitchLeftButton;
 key[7] = objGlobalControl.weaponSwitchRightButton;
-key[8] = objGlobalControl.pauseButton;
 
-var current_item = 9;
+var current_item = 8;
 menu[current_item] = "SLIDE";
 key[current_item] = objGlobalControl.slideButton;
 current_item++;

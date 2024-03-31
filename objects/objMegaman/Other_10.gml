@@ -68,6 +68,11 @@ switch global.weapon[playerID]
         global.primaryCol[playerID] = make_color_rgb(124, 124, 124);
         global.secondaryCol[playerID] = make_color_rgb(248, 248, 248);
     break;
+	
+	case hornetchaser:
+        global.primaryCol[playerID] = make_color_rgb(231, 191, 60);
+        global.secondaryCol[playerID] = make_color_rgb(247, 248, 248);
+    break;
     
 }
 

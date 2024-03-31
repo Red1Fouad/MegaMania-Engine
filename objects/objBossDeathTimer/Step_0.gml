@@ -1,12 +1,3 @@
-if instance_exists(objMegaman)
-{
-	playerID = objMegaman.playerID;
-}
-else
-{
-	playerID = 1;
-}
-
 if isMM == true && teleporting == false
 {
     if absorbing == false
@@ -58,7 +49,7 @@ if isMM == true && teleporting == false
         {
             if canInitJump == true && ground == true
             {
-                if global.weaponUnlocked[global.weapon[playerID]] == false //Only absorb the power if it's not already been unlocked
+                if global.weaponUnlocked[global.weaponID] == false //Only absorb the power if it's not already been unlocked
                 {
                     canInitJump = false;
                     
@@ -78,7 +69,7 @@ if isMM == true && teleporting == false
                 }
             }
             
-            if yspeed > 0 && y >= global.viewY+112 && canInitJump == false && global.weaponUnlocked[global.weapon[playerID].ID] == false
+            if yspeed > 0 && y >= global.viewY+112 && canInitJump == false && global.weaponUnlocked[global.weaponID] == false
             {
                 y = global.viewY+112;
                 absorbing = true;

@@ -12,6 +12,8 @@ function playerGetHit(argument0) {
 			damageMult = 1.5
 		else 
 			damageMult = 1;
+		
+		drawDamageNumber(x, y, ceil(argument0 * damageMult));
 	    global._health[playerID] -= argument0*damageMult;
     
 	    canHit = false;

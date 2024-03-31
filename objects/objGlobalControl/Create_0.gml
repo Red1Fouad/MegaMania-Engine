@@ -23,20 +23,20 @@ downKey = vk_down;
 jumpKey = ord("X");
 shootKey = ord("W");
 slideKey = ord("C");
-pauseKey = vk_space;
+pauseKey = vk_enter;
 weaponSwitchLeftKey = vk_numpad1;
 weaponSwitchRightKey = vk_numpad3;
 
-leftKey2 = ord("Q");
-rightKey2 = ord("D");
-upKey2 = ord("Z");
-downKey2 = ord("S");
-jumpKey2 = ord("J");
-shootKey2 = ord("U");
-slideKey2 = ord("V");
-pauseKey2 = vk_numpad8;
-weaponSwitchLeftKey2 = vk_numpad4;
-weaponSwitchRightKey2 = vk_numpad6;
+leftKey2 = -1;
+rightKey2 = -1;
+upKey2 = -1;
+downKey2 = -1;
+jumpKey2 = -1;
+shootKey2 = -1;
+slideKey2 = -1;
+pauseKey2 = -1;
+weaponSwitchLeftKey2 = -1;
+weaponSwitchRightKey2 = -1;
 
 //Gamepad Buttons 
 leftButton = gp_padl;
@@ -47,8 +47,8 @@ jumpButton = gp_face1;
 shootButton = gp_face3;
 slideButton = gp_face2;
 pauseButton = gp_start;
-weaponSwitchLeftButton = gp_shoulderlb;
-weaponSwitchRightButton = gp_shoulderrb;
+weaponSwitchLeftButton = gp_shoulderl;
+weaponSwitchRightButton = gp_shoulderr;
 
 leftButton2 = gp_padl;
 rightButton2 = gp_padr;
@@ -58,8 +58,9 @@ jumpButton2 = gp_face1;
 shootButton2 = gp_face3;
 slideButton2 = gp_face2;
 pauseButton2 = gp_start;
-weaponSwitchLeftButton2 = gp_shoulderlb;
-weaponSwitchRightButton2 = gp_shoulderrb;
+weaponSwitchLeftButton2 = gp_shoulderl;
+weaponSwitchRightButton2 = gp_shoulderr;
+
 
 // Mobile Inputs created on startup
 global.inputSize = [3, 4]; //change later?
@@ -151,7 +152,7 @@ if room == rmInit
     global.enableSlide = true; //Can we slide?
     
     //Weapon inventory
-    global.totalWeapons = 7; //8 weapons in total including the buster, but since 0 is also a valid weapon ID, the value becomes 7
+    global.totalWeapons = 8; //8 weapons in total including the buster, but since 0 is also a valid weapon ID, the value becomes 7
     
     for(i = 0; i <= global.totalWeapons; i += 1)
     {
@@ -165,7 +166,7 @@ if room == rmInit
     global.weaponSlot[2] = windstorm;
     global.weaponUnlocked[2] = true; //Unlocked because there's no RM for it yet
     global.weaponSlot[3] = pharaohshot;
-    global.weaponUnlocked[3] = true;
+    global.weaponUnlocked[3] = false;
     global.weaponSlot[4] = metalblade;
     global.weaponUnlocked[4] = true; //Unlocked because there's no RM for it yet
     global.weaponSlot[5] = starcrash;
@@ -174,6 +175,8 @@ if room == rmInit
     global.weaponUnlocked[6] = true; //Usually, Rush Coil is available from the beginning as well
     global.weaponSlot[7] = rushjet;
     global.weaponUnlocked[7] = false; //We have no RM that unlocks Rush Jet yet
+	global.weaponSlot[8] = hornetchaser;
+    global.weaponUnlocked[8] = true; //We have no RM that unlocks Rush Jet yet
     
     global.weaponUnlocked[global.totalWeapons+1] = true; //E-tank
     global.weaponUnlocked[global.totalWeapons+2] = true; //M-tank
@@ -192,6 +195,7 @@ if room == rmInit
     
     global.weaponName[silvertomahawk] = "SILVER.T";
     global.weaponName[windstorm] = "W.STORM";
+	global.weaponName[hornetchaser] = "H.CHASER";
     
     
     //Ammo
@@ -208,6 +212,7 @@ if room == rmInit
     
     global.weaponAmmo[silvertomahawk] = 1;
     global.weaponAmmo[windstorm] = 1;
+	global.weaponAmmo[hornetchaser] = 1;
 }
 
 

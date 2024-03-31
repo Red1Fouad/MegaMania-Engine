@@ -82,7 +82,8 @@ if global.frozen == false
             }
             
             instance_destroy();
-            instance_create(x, y, objBossDeathTimer);
+            var deathTimer = instance_create(x, y, objBossDeathTimer)
+			deathTimer.playerID = playerID;
         }
     }
     

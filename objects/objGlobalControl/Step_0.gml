@@ -1,3 +1,5 @@
+// Step Event of objGlobalControl
+
 //Hotfix for Mac users
 if os_type == os_macosx room_speed = 60;
 
@@ -55,22 +57,27 @@ switch sizeToWrite
         alarm[8] = 1
         break
     case 2:
-        window_set_size(512, 240*2)
+        window_set_size(256*sizeToWrite, 240*sizeToWrite)
         window_set_fullscreen(false)
         alarm[8] = 1
         break
     case 3:
-        window_set_size(768, 240*3)
+        window_set_size(256*sizeToWrite, 240*sizeToWrite)
         window_set_fullscreen(false)
         alarm[8] = 1
         break
     case 4:
-        window_set_size(1024, 240*4)
+        window_set_size(256*sizeToWrite, 240*sizeToWrite)
         window_set_fullscreen(false)
         alarm[8] = 1
         break
     case 5:
-        window_set_size(1024, 240*4)
+        window_set_size(256*4, 240*4)
         window_set_fullscreen(true)
         break
+}
+
+if !(room == rmWindman || room == rmArena)
+{
+	global.firstTimeLevel = true;
 }

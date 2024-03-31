@@ -27,7 +27,10 @@ if instance_number(objMegaman) <= 1
 	
 	if global.player2Active == true
 	{
-		var p2 = instance_create(x, y, objMegaman)
+		var _x = x;
+		var _y = y;
+		if room == rmArena {_x = 304; _y = 192}
+		var p2 = instance_create(_x, _y, objMegaman)
 		p2.character = global.playerName2;
 		p2.playerID = 2;
 	}

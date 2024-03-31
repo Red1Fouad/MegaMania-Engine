@@ -29,7 +29,7 @@ selected = 0;
 if os_browser == browser_not_a_browser && os_type != os_android && os_type != os_ios
 {
 	menu_actions = [
-	    rmPlayerSelect,         // "NEW GAME"
+	    rmLevelSelect,         // "NEW GAME"
 	    rmKeyMenu,            // "KEY CONFIG"
 	    rmJoyMenu,            // "GAMEPAD CONFIG"
 	    rmDisclaimer            // "BACK"
@@ -38,7 +38,7 @@ if os_browser == browser_not_a_browser && os_type != os_android && os_type != os
 else
 {
 	menu_actions = [
-	    rmPlayerSelect,         // "NEW GAME"
+	    rmLevelSelect,         // "NEW GAME"
 	    rmDisclaimer            // "BACK"
 	];
 }

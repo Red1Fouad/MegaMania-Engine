@@ -23,6 +23,7 @@ else
 var i;
 for(i = 0; i <= global.totalWeapons; i += 1)
 {
-    global.ammo[i][global.playerID] = 28;
+    global.ammo[1][i] = 28;
+	global.ammo[2][i] = 28;
 }
 

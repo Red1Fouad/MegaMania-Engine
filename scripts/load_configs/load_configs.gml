@@ -18,6 +18,7 @@ function load_configs(){
 	    pauseKey = ds_map_find_value(map, "pauseKey");
 	    weaponSwitchLeftKey = ds_map_find_value(map, "weaponSwitchLeftKey");
 	    weaponSwitchRightKey = ds_map_find_value(map, "weaponSwitchRightKey");
+		selectkey = ds_map_find_value(map, "selectkey");
 		
 		//Keys P2
 	    leftKey2 = ds_map_find_value(map, "leftKey2");
@@ -30,6 +31,7 @@ function load_configs(){
 	    pauseKey2 = ds_map_find_value(map, "pauseKey2");
 	    weaponSwitchLeftKey2 = ds_map_find_value(map, "weaponSwitchLeftKey2");
 	    weaponSwitchRightKey2 = ds_map_find_value(map, "weaponSwitchRightKey2");
+		selectkey2 = ds_map_find_value(map, "selectkey2");
     
 	    //Buttons P1
 	    leftButton = ds_map_find_value(map, "leftButton");
@@ -39,7 +41,6 @@ function load_configs(){
 	    jumpButton = ds_map_find_value(map, "jumpButton");
 	    shootButton = ds_map_find_value(map, "shootButton");
 	    slideButton = ds_map_find_value(map, "slideButton");
-	    pauseButton = ds_map_find_value(map, "pauseButton");
 	    weaponSwitchLeftButton = ds_map_find_value(map, "weaponSwitchLeftButton");
 	    weaponSwitchRightButton = ds_map_find_value(map, "weaponSwitchRightButton");
 		
@@ -51,7 +52,6 @@ function load_configs(){
 		jumpButton2 = ds_map_find_value(map, "jumpButton2");
 		shootButton2 = ds_map_find_value(map, "shootButton2");
 		slideButton2 = ds_map_find_value(map, "slideButton2");
-		pauseButton2 = ds_map_find_value(map, "pauseButton2");
 		weaponSwitchLeftButton2 = ds_map_find_value(map, "weaponSwitchLeftButton2");
 		weaponSwitchRightButton2 = ds_map_find_value(map, "weaponSwitchRightButton2");
 

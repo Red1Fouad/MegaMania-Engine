@@ -7,6 +7,7 @@ function macros() {
 #macro rushcoil 5
 #macro starcrash 6
 #macro rushjet 7
+#macro hornetchaser 8
 #macro cfgMaxStep 4
 
 

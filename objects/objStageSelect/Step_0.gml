@@ -102,7 +102,7 @@ if selected == false
             case 7: //Pharaoh Man; currently the only selectable boss
                 selected = true;
                 
-                global.destinationLevel = rmBeta; //The level to go to after the boss introduction
+                global.destinationLevel = rmWindman; //The level to go to after the boss introduction
                 global.introductionBoss = "pharaoh";
                 global.introBGCol = make_color_rgb(255, 145, 95); //The background color of the boss introduction screen
                 global.introLineCol = make_color_rgb(255, 204, 174); //The color of the moving lines in the boss introduction screen
@@ -112,7 +112,7 @@ if selected == false
                     ID.type = "room";
                     
                 if global.bossDefeated[option] == false
-                    ID.myRoom = rmTestStage;
+                    ID.myRoom = rmIntroduction;
                 else
                     ID.myRoom = global.destinationLevel;
             break;
