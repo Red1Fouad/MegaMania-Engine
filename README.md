@@ -8,4 +8,4 @@ The main goal of this repository is to try and make the best megaman engine for 
 
 Any Contribution is welcome, whether it's sprite editing, sound editing, code addition, literally anything to make the engine better.
 
-[<img src="https://github.com/BinarryCode/MegaMania-Engine/assets/53833277/05573ffe-c3e0-4f15-a324-95fd669385e8">](https://discord.gg/2wcuRECEWW)
+[<img src="https://github.com/BinarryCode/MegaMania-Engine/assets/53833277/27281772-860e-4709-a5b5-176a428e827e">](https://discord.gg/2wcuRECEWW)
