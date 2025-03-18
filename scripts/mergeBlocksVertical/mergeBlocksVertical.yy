@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"mergeBlocksVertical",
   "isCompatibility":false,
   "isDnD":false,

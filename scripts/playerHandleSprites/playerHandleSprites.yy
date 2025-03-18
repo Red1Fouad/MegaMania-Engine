@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"playerHandleSprites",
   "isCompatibility":false,
   "isDnD":false,

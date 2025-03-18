@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"playMusicLoopPoint",
   "isCompatibility":false,
   "isDnD":false,

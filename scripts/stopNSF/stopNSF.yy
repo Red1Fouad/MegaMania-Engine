@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"stopNSF",
   "isCompatibility":false,
   "isDnD":false,

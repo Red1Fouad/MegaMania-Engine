@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"insideViewBox",
   "isCompatibility":false,
   "isDnD":false,

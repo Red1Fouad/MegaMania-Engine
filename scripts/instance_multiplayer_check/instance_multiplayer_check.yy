@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"instance_multiplayer_check",
   "isCompatibility":false,
   "isDnD":false,

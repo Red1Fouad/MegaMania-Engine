@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"drawSpriteColorSwap",
   "isCompatibility":false,
   "isDnD":false,

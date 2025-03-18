@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"playerSetColors",
   "isCompatibility":false,
   "isDnD":false,

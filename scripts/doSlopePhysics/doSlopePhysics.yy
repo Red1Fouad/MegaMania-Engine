@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"doSlopePhysics",
   "isCompatibility":false,
   "isDnD":false,

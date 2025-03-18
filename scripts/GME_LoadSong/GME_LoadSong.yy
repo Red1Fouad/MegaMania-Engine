@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GME_LoadSong",
   "isCompatibility":false,
   "isDnD":false,

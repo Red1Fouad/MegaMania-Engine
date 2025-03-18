@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"gamepad_button_check_pressed_all",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"isTouchDevice",
   "isCompatibility":false,
   "isDnD":false,

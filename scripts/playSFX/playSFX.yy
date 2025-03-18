@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"playSFX",
   "isCompatibility":false,
   "isDnD":false,

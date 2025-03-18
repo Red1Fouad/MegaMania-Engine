@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GME_GetPosition",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GME_SetTempo",
   "isCompatibility":false,
   "isDnD":false,

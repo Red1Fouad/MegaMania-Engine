@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"bbox_get_ycenter_object",
   "isCompatibility":false,
   "isDnD":false,

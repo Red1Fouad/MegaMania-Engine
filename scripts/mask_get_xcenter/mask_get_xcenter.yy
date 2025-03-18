@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"mask_get_xcenter",
   "isCompatibility":false,
   "isDnD":false,

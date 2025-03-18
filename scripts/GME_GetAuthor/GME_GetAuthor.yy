@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"GME_GetAuthor",
   "isCompatibility":false,
   "isDnD":false,

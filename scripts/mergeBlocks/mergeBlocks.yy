@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"mergeBlocks",
   "isCompatibility":false,
   "isDnD":false,

@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"sprite_get_xcenter_object",
   "isCompatibility":false,
   "isDnD":false,

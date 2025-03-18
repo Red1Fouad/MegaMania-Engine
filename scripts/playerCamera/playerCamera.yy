@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"playerCamera",
   "isCompatibility":false,
   "isDnD":false,

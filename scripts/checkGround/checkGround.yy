@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"checkGround",
   "isCompatibility":false,
   "isDnD":false,

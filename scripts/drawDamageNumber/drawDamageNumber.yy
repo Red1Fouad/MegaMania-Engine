@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"drawDamageNumber",
   "isCompatibility":false,
   "isDnD":false,

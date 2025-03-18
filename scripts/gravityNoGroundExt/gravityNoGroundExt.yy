@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"gravityNoGroundExt",
   "isCompatibility":false,
   "isDnD":false,

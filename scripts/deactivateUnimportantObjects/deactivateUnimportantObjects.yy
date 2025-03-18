@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"deactivateUnimportantObjects",
   "isCompatibility":false,
   "isDnD":false,
