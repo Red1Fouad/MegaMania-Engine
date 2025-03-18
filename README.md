@@ -6,6 +6,12 @@ MegaMania Engine is a fork of [the Mega Engine made by Wrecking Programs](https:
 
 The main goal of this repository is to try and make the best megaman engine for GameMaker Studio 2 users, as GameMaker 1.4 is slower and outdated (for example, awful IDE, outdated usage of DX9 and lack of new functions)
 
-Any Contribution is welcome, whether it's sprite editing, sound editing, code addition, literally anything to make the engine better.
+I've decided to discontinue this project as i'm busy with other important stuff. anyone is welcome to fork or update this repo.
 
 [<img src="https://github.com/BinarryCode/MegaMania-Engine/assets/53833277/27281772-860e-4709-a5b5-176a428e827e">](https://discord.gg/2wcuRECEWW)
+
+CREDITS:
+
+- Sprites: Kennen*B*, Invader Toad, Solren,
+- Programming: RED1, Binary
+- Some code has been borrowed from Megaman Maker version 1, permitted by Wrecking Programs.
